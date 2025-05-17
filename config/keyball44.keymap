@@ -36,7 +36,6 @@
             label = "COMMA_QUESTION";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp QUESTION>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -45,7 +44,6 @@
             label = "DOT_SEMI";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp SEMI>;
-
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -54,8 +52,7 @@
             label = "TD_Q_1";
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kp NUMBER_1>;
-
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_w_2: td_w_2 {
@@ -63,8 +60,7 @@
             label = "TD_W_2";
             #binding-cells = <0>;
             bindings = <&kp W>, <&kp NUMBER_2>;
-
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_e_3: td_e_3 {
@@ -72,8 +68,7 @@
             label = "TD_E_3";
             #binding-cells = <0>;
             bindings = <&kp E>, <&kp NUMBER_3>;
-
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_r_4: td_r_4 {
@@ -81,8 +76,7 @@
             label = "TD_R_4";
             #binding-cells = <0>;
             bindings = <&kp R>, <&kp NUMBER_4>;
-
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_t_5: td_t_5 {
@@ -90,8 +84,7 @@
             label = "TD_T_5";
             #binding-cells = <0>;
             bindings = <&kp T>, <&kp NUMBER_5>;
-
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_y_6: td_y_6 {
@@ -99,8 +92,7 @@
             label = "TD_Y_6";
             #binding-cells = <0>;
             bindings = <&kp Y>, <&kp NUMBER_6>;
-
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_u_7: td_u_7 {
@@ -108,8 +100,7 @@
             label = "TD_U_7";
             #binding-cells = <0>;
             bindings = <&kp U>, <&kp NUMBER_7>;
-
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_i_8: td_i_8 {
@@ -117,8 +108,7 @@
             label = "TD_I_8";
             #binding-cells = <0>;
             bindings = <&kp I>, <&kp NUMBER_8>;
-
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_o_9: td_o_9 {
@@ -126,8 +116,7 @@
             label = "TD_O_9";
             #binding-cells = <0>;
             bindings = <&kp O>, <&kp NUMBER_9>;
-
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
 
         td_p_0: td_p_0 {
@@ -135,8 +124,7 @@
             label = "TD_P_0";
             #binding-cells = <0>;
             bindings = <&kp P>, <&kp NUMBER_0>;
-
-            tapping-term-ms = <200>;
+            tapping-term-ms = <250>;
         };
     };
 
