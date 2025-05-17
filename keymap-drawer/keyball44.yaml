@@ -44,7 +44,7 @@ layers:
   - {t: ']', s: '}'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:keyboard-space$$', h: FUN}
-  - {t: '$$mdi:backspace$$', h: '$$mdi:backspace-reverse-outline$$'}
+  - '&td_bs_del'
   SYM:
   - {t: '$$mdi:transfer$$', type: trans}
   - '!'
