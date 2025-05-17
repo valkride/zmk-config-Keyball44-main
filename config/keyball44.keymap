@@ -47,6 +47,77 @@
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        td_q_1: td_q_1 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_Q_1";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&kp NUMBER_1>;
+            tapping-term-ms = <200>;
+        };
+        td_w_2: td_w_2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_W_2";
+            #binding-cells = <0>;
+            bindings = <&kp W>, <&kp NUMBER_2>;
+            tapping-term-ms = <200>;
+        };
+        td_e_3: td_e_3 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_E_3";
+            #binding-cells = <0>;
+            bindings = <&kp E>, <&kp NUMBER_3>;
+            tapping-term-ms = <200>;
+        };
+        td_r_4: td_r_4 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_R_4";
+            #binding-cells = <0>;
+            bindings = <&kp R>, <&kp NUMBER_4>;
+            tapping-term-ms = <200>;
+        };
+        td_t_5: td_t_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_T_5";
+            #binding-cells = <0>;
+            bindings = <&kp T>, <&kp NUMBER_5>;
+            tapping-term-ms = <200>;
+        };
+        td_y_6: td_y_6 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_Y_6";
+            #binding-cells = <0>;
+            bindings = <&kp Y>, <&kp NUMBER_6>;
+            tapping-term-ms = <200>;
+        };
+        td_u_7: td_u_7 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_U_7";
+            #binding-cells = <0>;
+            bindings = <&kp U>, <&kp NUMBER_7>;
+            tapping-term-ms = <200>;
+        };
+        td_i_8: td_i_8 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_I_8";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&kp NUMBER_8>;
+            tapping-term-ms = <200>;
+        };
+        td_o_9: td_o_9 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_O_9";
+            #binding-cells = <0>;
+            bindings = <&kp O>, <&kp NUMBER_9>;
+            tapping-term-ms = <200>;
+        };
+        td_p_0: td_p_0 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_P_0";
+            #binding-cells = <0>;
+            bindings = <&kp P>, <&kp NUMBER_0>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -55,10 +126,10 @@
         default_layer {
             label = "QWRT";
             bindings = <
-&kp ESCAPE        &mt NUMBER_1 Q  &mt NUMBER_2 W    &mt NUMBER_3 E     &mt NUMBER_4 R  &mt N5 T                 &mt NUMBER_6 Y  &mt N7 U  &mt N8 I   &mt N9 O  &mt N0 P   &mt EQUAL MINUS
-&kp TAB           &kp A           &kp S             &kp D              &kp F           &kp G                    &kp H           &kp J     &kp K      &kp L     &kp SEMI   &mt GRAVE SQT
-&kp LEFT_SHIFT    &kp Z           &kp X             &kp C              &kp V           &kp B                    &kp N           &kp M     &kp COMMA  &kp DOT   &kp SLASH  &kp LEFT_GUI
-&kp LEFT_CONTROL  &kp LALT        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp SPACE                     &kp SPACE  &kp ENTER                                                 &mt DEL BACKSPACE
+&kp ESCAPE        &td_q_1  &td_w_2  &td_e_3  &td_r_4  &td_t_5                 &td_y_6  &td_u_7  &td_i_8   &td_o_9  &td_p_0   &mt EQUAL MINUS
+&kp TAB           &kp A    &kp S    &kp D    &kp F    &kp G                    &kp H    &kp J    &kp K     &kp L    &kp SEMI  &mt GRAVE SQT
+&kp LEFT_SHIFT    &kp Z    &kp X    &kp C    &kp V    &kp B                    &kp N    &kp M    &kp COMMA &kp DOT  &kp SLASH &kp LEFT_GUI
+&kp LEFT_CONTROL  &kp LALT &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp SPACE          &kp SPACE &kp ENTER                                  &mt DEL BACKSPACE
             >;
         };
 
