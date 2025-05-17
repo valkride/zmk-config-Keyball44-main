@@ -2,16 +2,16 @@ layout: {zmk_keyboard: keyball44}
 layers:
   QWRT:
   - $$mdi:keyboard-esc$$
-  - {t: Q, h: '1'}
-  - {t: W, h: '2'}
-  - {t: E, h: '3'}
-  - {t: R, h: '4'}
-  - {t: T, h: '5'}
-  - {t: Y, h: '6'}
-  - {t: U, h: '7'}
-  - {t: I, h: '8'}
-  - {t: O, h: '9'}
-  - {t: P, h: '0'}
+  - '&td_q_1'
+  - '&td_w_2'
+  - '&td_e_3'
+  - '&td_r_4'
+  - '&td_t_5'
+  - '&td_y_6'
+  - '&td_u_7'
+  - '&td_i_8'
+  - '&td_o_9'
+  - '&td_p_0'
   - {t: '-', h: '=', s: _}
   - $$mdi:keyboard-tab$$
   - A
