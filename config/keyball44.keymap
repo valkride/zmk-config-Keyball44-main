@@ -129,7 +129,7 @@
 
         td_bs_del: td_bs_del {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_BS_DE";
+            label = "TD_BS_DEL";
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
             tapping-term-ms = <200>;
