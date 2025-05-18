@@ -136,6 +136,14 @@
         };
     };
 
+    layer_status_widget: layer_status_widget {
+        compatible = "zmk,layer-status-widget";
+    };
+
+    battery_status_widget: battery_status_widget {
+        compatible = "zmk,battery-status-widget";
+    };
+
     display_widgets {
         compatible = "zmk,display-widgets";
         widgets = <&layer_status_widget &battery_status_widget /* &bt_status_widget */>;
