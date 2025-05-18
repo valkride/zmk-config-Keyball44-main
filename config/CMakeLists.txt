@@ -1,1 +1,2 @@
 target_sources(app PRIVATE ${CMAKE_CURRENT_LIST_DIR}/display/display.c)
+target_sources(app PRIVATE ${CMAKE_CURRENT_LIST_DIR}/display/clock.c)

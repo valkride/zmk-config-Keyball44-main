@@ -140,9 +140,18 @@
         compatible = "zmk,custom-status-widget";
     };
 
+    clock_widget: clock_widget {
+        compatible = "zmk,clock-widget";
+    };
+
     display_widgets {
         compatible = "zmk,display-widgets";
         widgets = <&custom_status_widget>;
+    };
+
+    display_widgets_left {
+        compatible = "zmk,display-widgets";
+        widgets = <&clock_widget>;
     };
 
     keymap {
