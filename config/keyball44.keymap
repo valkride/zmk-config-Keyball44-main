@@ -144,9 +144,13 @@
         compatible = "zmk,battery-status-widget";
     };
 
+    battery_percent_widget: battery_percent_widget {
+        compatible = "zmk,battery-percent-widget";
+    };
+
     display_widgets {
         compatible = "zmk,display-widgets";
-        widgets = <&layer_status_widget &battery_status_widget /* &bt_status_widget */>;
+        widgets = <&battery_percent_widget>;
     };
 
     keymap {
