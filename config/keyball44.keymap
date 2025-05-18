@@ -136,6 +136,13 @@
         };
     };
 
+    extern custom_status_widget;
+
+    display_widgets {
+        compatible = "zmk,display-widgets";
+        widgets = <&custom_status_widget>;
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
