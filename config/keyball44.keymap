@@ -136,7 +136,9 @@
         };
     };
 
-    extern custom_status_widget;
+    custom_status_widget: custom_status_widget {
+        compatible = "zmk,custom-status-widget";
+    };
 
     display_widgets {
         compatible = "zmk,display-widgets";
