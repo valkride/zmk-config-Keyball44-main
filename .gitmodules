@@ -1,0 +1,3 @@
+[submodule "modules/bsim_hw_models/nrf_hw_models"]
+    path = modules/bsim_hw_models/nrf_hw_models
+    url = https://github.com/Bluetooth-Devices/nrf_hw_models.git
