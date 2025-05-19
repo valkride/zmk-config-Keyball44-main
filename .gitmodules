@@ -5,3 +5,7 @@
 [submodule "modules/crypto/mbedtls"]
     path = modules/crypto/mbedtls
     url = https://github.com/zephyrproject-rtos/mbedtls.git
+
+[submodule "modules/crypto/tinycrypt"]
+    path = modules/crypto/tinycrypt
+    url = https://github.com/zephyrproject-rtos/tinycrypt.git
