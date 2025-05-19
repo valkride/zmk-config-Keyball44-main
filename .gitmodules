@@ -145,3 +145,19 @@
 [submodule "modules/tee/tf-a/trusted-firmware-a"]
     path = modules/tee/tf-a/trusted-firmware-a
     url = https://github.com/zephyrproject-rtos/trusted-firmware-a.git
+
+[submodule "zephyr"]
+    path = zephyr
+    url = https://github.com/zephyrproject-rtos/zephyr.git
+
+[submodule "zmk"]
+    path = zmk
+    url = https://github.com/zmkfirmware/zmk.git
+
+[submodule "zmk-nice-oled"]
+    path = zmk-nice-oled
+    url = https://github.com/mctechnology17/zmk-nice-oled.git
+
+[submodule "zmk-pmw3610-driver"]
+    path = zmk-pmw3610-driver
+    url = https://github.com/kumamuk-git/zmk-pmw3610-driver.git
