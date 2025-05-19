@@ -9,3 +9,139 @@
 [submodule "modules/crypto/tinycrypt"]
     path = modules/crypto/tinycrypt
     url = https://github.com/zephyrproject-rtos/tinycrypt.git
+
+[submodule "modules/debug/mipi-sys-t"]
+    path = modules/debug/mipi-sys-t
+    url = https://github.com/zephyrproject-rtos/mipi-sys-t.git
+
+[submodule "modules/debug/percepio"]
+    path = modules/debug/percepio
+    url = https://github.com/zephyrproject-rtos/percepio.git
+
+[submodule "modules/debug/segger"]
+    path = modules/debug/segger
+    url = https://github.com/zephyrproject-rtos/segger.git
+
+[submodule "modules/fs/fatfs"]
+    path = modules/fs/fatfs
+    url = https://github.com/zephyrproject-rtos/fatfs.git
+
+[submodule "modules/fs/littlefs"]
+    path = modules/fs/littlefs
+    url = https://github.com/zephyrproject-rtos/littlefs.git
+
+[submodule "modules/hal/ambiq"]
+    path = modules/hal/ambiq
+    url = https://github.com/zephyrproject-rtos/hal_ambiq.git
+
+[submodule "modules/hal/atmel"]
+    path = modules/hal/atmel
+    url = https://github.com/zephyrproject-rtos/hal_atmel.git
+
+[submodule "modules/hal/cmsis"]
+    path = modules/hal/cmsis
+    url = https://github.com/zephyrproject-rtos/hal_cmsis.git
+
+[submodule "modules/hal/espressif"]
+    path = modules/hal/espressif
+    url = https://github.com/zephyrproject-rtos/hal_espressif.git
+
+[submodule "modules/hal/ethos_u"]
+    path = modules/hal/ethos_u
+    url = https://github.com/zephyrproject-rtos/hal_ethos_u.git
+
+[submodule "modules/hal/gigadevice"]
+    path = modules/hal/gigadevice
+    url = https://github.com/zephyrproject-rtos/hal_gigadevice.git
+
+[submodule "modules/hal/intel"]
+    path = modules/hal/intel
+    url = https://github.com/zephyrproject-rtos/hal_intel.git
+
+[submodule "modules/hal/libmetal"]
+    path = modules/hal/libmetal
+    url = https://github.com/zephyrproject-rtos/libmetal.git
+
+[submodule "modules/hal/nordic"]
+    path = modules/hal/nordic
+    url = https://github.com/zephyrproject-rtos/hal_nordic.git
+
+[submodule "modules/hal/nuvoton"]
+    path = modules/hal/nuvoton
+    url = https://github.com/zephyrproject-rtos/hal_nuvoton.git
+
+[submodule "modules/hal/quicklogic"]
+    path = modules/hal/quicklogic
+    url = https://github.com/zephyrproject-rtos/hal_quicklogic.git
+
+[submodule "modules/hal/renesas"]
+    path = modules/hal/renesas
+    url = https://github.com/zephyrproject-rtos/hal_renesas.git
+
+[submodule "modules/hal/rpi_pico"]
+    path = modules/hal/rpi_pico
+    url = https://github.com/zephyrproject-rtos/rpi_pico_sdk.git
+
+[submodule "modules/hal/stm32"]
+    path = modules/hal/stm32
+    url = https://github.com/zephyrproject-rtos/hal_stm32.git
+
+[submodule "modules/hal/telink"]
+    path = modules/hal/telink
+    url = https://github.com/zephyrproject-rtos/hal_telink.git
+
+[submodule "modules/hal/wurthelektronik"]
+    path = modules/hal/wurthelektronik
+    url = https://github.com/zephyrproject-rtos/hal_wurthelektronik.git
+
+[submodule "modules/lib/acpica"]
+    path = modules/lib/acpica
+    url = https://github.com/zephyrproject-rtos/acpica.git
+
+[submodule "modules/lib/canopennode"]
+    path = modules/lib/canopennode
+    url = https://github.com/zephyrproject-rtos/canopennode.git
+
+[submodule "modules/lib/cmsis-dsp"]
+    path = modules/lib/cmsis-dsp
+    url = https://github.com/zephyrproject-rtos/cmsis-dsp.git
+
+[submodule "modules/lib/cmsis-nn"]
+    path = modules/lib/cmsis-nn
+    url = https://github.com/zephyrproject-rtos/cmsis-nn.git
+
+[submodule "modules/lib/gui/lvgl"]
+    path = modules/lib/gui/lvgl
+    url = https://github.com/zephyrproject-rtos/lvgl.git
+
+[submodule "modules/lib/liblc3"]
+    path = modules/lib/liblc3
+    url = https://github.com/zephyrproject-rtos/liblc3.git
+
+[submodule "modules/lib/nanopb"]
+    path = modules/lib/nanopb
+    url = https://github.com/zephyrproject-rtos/nanopb.git
+
+[submodule "modules/lib/open-amp"]
+    path = modules/lib/open-amp
+    url = https://github.com/zephyrproject-rtos/open-amp.git
+
+[submodule "modules/lib/picolibc"]
+    path = modules/lib/picolibc
+    url = https://github.com/zephyrproject-rtos/picolibc.git
+
+[submodule "modules/lib/uoscore-uedhoc"]
+    path = modules/lib/uoscore-uedhoc
+    url = https://github.com/zephyrproject-rtos/uoscore-uedhoc.git
+
+[submodule "modules/lib/zcbor"]
+    path = modules/lib/zcbor
+    url = https://github.com/zephyrproject-rtos/zcbor.git
+
+[submodule "modules/msgs/zmk-studio-messages"]
+    path = modules/msgs/zmk-studio-messages
+    url = https://github.com/zmkfirmware/zmk-studio-messages.git
+
+[submodule "modules/tee/tf-a/trusted-firmware-a"]
+    path = modules/tee/tf-a/trusted-firmware-a
+    url = https://github.com/zephyrproject-rtos/trusted-firmware-a.git
