@@ -2,5 +2,35 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
-    # No 'with' inputs needed as 'pre-run' is not supported by the referenced workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Clean up .west if it exists
+        run: |
+          if [ -d ".west" ]; then
+            rm -rf .west
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install west
+        run: pip install west
+
+      - name: Initialize west
+        run: west init -l config
+
+      - name: Update west
+        run: west update
+
+      - name: Export Zephyr CMake package
+        run: west zephyr-export
+
+      - name: Build (example)
+        run: west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=keyball44_left
+
+      # Add more build steps for other shields/boards as needed
