@@ -1,3 +1,7 @@
 [submodule "modules/bsim_hw_models/nrf_hw_models"]
     path = modules/bsim_hw_models/nrf_hw_models
     url = https://github.com/Bluetooth-Devices/nrf_hw_models.git
+
+[submodule "modules/crypto/mbedtls"]
+    path = modules/crypto/mbedtls
+    url = https://github.com/zephyrproject-rtos/mbedtls.git
