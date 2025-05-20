@@ -136,23 +136,6 @@
         };
     };
 
-    layer_status_widget: layer_status_widget {
-        compatible = "zmk,layer-status-widget";
-    };
-
-    battery_status_widget: battery_status_widget {
-        compatible = "zmk,battery-status-widget";
-    };
-
-    battery_percent_widget: battery_percent_widget {
-        compatible = "zmk,battery-percent-widget";
-    };
-
-    display_widgets {
-        compatible = "zmk,display-widgets";
-        widgets = <&battery_percent_widget>;
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
