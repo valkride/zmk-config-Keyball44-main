@@ -60,12 +60,12 @@
 
         move_x: move_x {
             layers = <0>;
-            bindings = <&kp LEFT &kp RIGHT>;
+            bindings = <&kp LEFT>;
             tick = <10>;
         };
         move_y: move_y {
             layers = <0>;
-            bindings = <&kp UP &kp DOWN>;
+            bindings = <&kp UP>;
             tick = <10>;
         };
     };
