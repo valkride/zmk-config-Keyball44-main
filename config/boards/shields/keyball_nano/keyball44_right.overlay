@@ -11,14 +11,14 @@
 };
 
 &kscan0 {
-	col-gpios
-		= <&pro_micro 4 GPIO_ACTIVE_HIGH>
-		, <&pro_micro 5 GPIO_ACTIVE_HIGH>
-		, <&pro_micro 6 GPIO_ACTIVE_HIGH>
-		, <&pro_micro 7 GPIO_ACTIVE_HIGH>
-		, <&pro_micro 8 GPIO_ACTIVE_HIGH>
+    col-gpios
+        = <&pro_micro 4 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 5 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 6 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 7 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 8 GPIO_ACTIVE_HIGH>
         , <&pro_micro 9 GPIO_ACTIVE_HIGH>
-		;
+        ;
 };
 
 &pinctrl {
@@ -54,9 +54,20 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	automouse-layer = <4>;
-	scroll-layers = <5>;
-	snipe-layers = <6>;
+        automouse-layer = <4>;
+        scroll-layers = <5>;
+        snipe-layers = <6>;
+
+        move_x: move_x {
+            layers = <0>;
+            bindings = <&kp LEFT &kp RIGHT>;
+            tick = <10>;
+        };
+        move_y: move_y {
+            layers = <0>;
+            bindings = <&kp UP &kp DOWN>;
+            tick = <10>;
+        };
     };
 };
 
@@ -64,6 +75,5 @@
   trackball_listener {
     compatible = "zmk,input-listener";
     device = <&trackball>;
-
   };
 };
