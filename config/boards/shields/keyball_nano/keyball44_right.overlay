@@ -57,17 +57,6 @@
         automouse-layer = <4>;
         scroll-layers = <5>;
         snipe-layers = <6>;
-
-        move_x: move_x {
-            layers = <0>;
-            bindings = <&kp A>;
-            tick = <10>;
-        };
-        move_y: move_y {
-            layers = <0>;
-            bindings = <&kp A>;
-            tick = <10>;
-        };
     };
 };
 
