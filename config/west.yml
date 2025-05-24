@@ -2,6 +2,10 @@ manifest:
   remotes:
     - name: valkride
       url-base: https://github.com/valkride
+    - name: zmkfirmware
+      url-base: https://github.com/petejohanson
+    - name: inorichi
+      url-base: https://github.com/inorichi
   projects:
     - name: zmk
       remote: valkride
@@ -12,6 +16,13 @@ manifest:
       revision: main
     - name: zmk-nice-oled
       remote: valkride
+      revision: main
+    - name: zmk
+      remote: zmkfirmware
+      revision: feat/pointers-move-scroll
+      import: app/west.yml
+    - name: zmk-pmw3610-driver
+      remote: inorichi
       revision: main
   self:
     path: config
