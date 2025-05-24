@@ -63,12 +63,12 @@
         /*   optional: ball action on specific layers  */
         arrows {
             layers = <3>;
-            bindings =
+            bindings = {
                 <&kp RIGHT_ARROW>,
                 <&kp LEFT_ARROW>,
                 <&kp UP_ARROW>,
                 <&kp DOWN_ARROW>;
-
+            };
             /*   optional: ball action configuration  */
             tick = <10>;
             // wait-ms = <5>;
