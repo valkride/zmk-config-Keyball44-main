@@ -7,10 +7,6 @@ manifest:
     - name: inorichi
       url-base: https://github.com/inorichi
   projects:
-    - name: zmk
-      remote: valkride
-      revision: main
-      import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: valkride
       revision: main
