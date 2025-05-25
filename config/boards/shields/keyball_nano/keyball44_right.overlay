@@ -62,6 +62,7 @@
 
         ball_action: ball_action@0 {
             layers = <1>;
+            bindings = <&some_behavior 0>;
             // ...other ball action properties or bindings as needed...
         };
     };
