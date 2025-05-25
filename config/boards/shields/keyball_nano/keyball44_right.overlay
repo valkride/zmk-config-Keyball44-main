@@ -55,16 +55,23 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        /*   optional features   */
-        scroll-layers = <1>;
+        scroll-layers = <4>;
         snipe-layers = <2>;
         automouse-layer = <3>;
+
+        ball_action {
+            bindings = <&kp LEFT &kp RIGHT &kp UP &kp DOWN>;
+            layers = <1>; // Layer number for arrow key mode
+            tick = <10>;  // Movement threshold before sending a key
+            wait_ms = <0>;
+            tap_ms = <0>;
         };
     };
+};
 
 / {
-  trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-  };
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
 };
