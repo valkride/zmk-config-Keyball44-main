@@ -61,7 +61,6 @@
         automouse-layer = <3>;
         };
     };
-};
 
 / {
   trackball_listener {
