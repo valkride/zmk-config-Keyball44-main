@@ -63,7 +63,7 @@
         /*   optional: ball action on specific layers  */
         arrows {
             layers = <3>;
-            bindings = <RIGHT_ARROW>, <LEFT_ARROW>, <UP_ARROW>, <DOWN_ARROW>;
+            bindings = <0x4F>, <0x50>, <0x52>, <0x51>; // Replace with actual keycodes or numeric values
             tick = <10>;
         };
     };
