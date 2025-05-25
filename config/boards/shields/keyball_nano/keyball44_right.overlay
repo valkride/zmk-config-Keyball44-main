@@ -56,19 +56,15 @@
         irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
         /*   optional features   */
-        scroll-layers = <4>;
+        scroll-layers = <1>;
         snipe-layers = <2>;
         automouse-layer = <3>;
-
-        ball_action: ball_action@0 {
-            layers = <1>;
-            bindings = <&some_behavior 0>;
-            // ...other ball action properties or bindings as needed...
         };
     };
 
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-    };
+/ {
+  trackball_listener {
+    compatible = "zmk,input-listener";
+    device = <&trackball>;
+  };
 };

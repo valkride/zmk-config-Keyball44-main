@@ -133,14 +133,6 @@
             bindings = <&kp BACKSPACE>, <&kp DELETE>;
             tapping-term-ms = <200>;
         };
-
-        some_behavior: some_behavior {
-            compatible = "zmk,behavior-tap-dance"; // Or another compatible as needed
-            label = "SOME_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT>, <&kp RIGHT>, <&kp UP>, <&kp DOWN>; // Example: arrow keys
-            tapping-term-ms = <200>;
-        };
     };
 
     keymap {
