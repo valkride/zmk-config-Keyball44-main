@@ -63,7 +63,8 @@
         arrows: arrows {
             // Arrow keys: Right(0x4F), Left(0x50), Up(0x52), Down(0x51)
             bindings = <0x4F 0x50 0x52 0x51>;
-            layers = <1>;
+            layers = <0>;
+            bogus_property = "overlay_applied";
         };
     };
 };
