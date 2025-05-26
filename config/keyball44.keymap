@@ -145,6 +145,7 @@
 &kp TAB           &kp A     &kp S             &kp D        &kp F              &kp G                 &kp H        &kp J    &kp K      &kp L    &kp SEMI   &mt GRAVE SQT
 &kp LEFT_SHIFT    &kp Z     &kp X             &kp C        &kp V              &kp B                 &kp N        &kp M    &kp COMMA  &kp DOT  &kp SLASH  &mt PRINTSCREEN LEFT_GUI
 &kp LEFT_CONTROL  &kp LALT  &kp LEFT_BRACKET  &lt 1 SPACE  &kp RIGHT_BRACKET               &kp RET  &lt 2 SPACE                                          &td_bs_del
+&kp UP            &kp DOWN  &kp LEFT          &kp RIGHT
 
             >;
         };
