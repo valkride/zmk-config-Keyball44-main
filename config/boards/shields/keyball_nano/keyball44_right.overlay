@@ -61,8 +61,8 @@
         // automouse-layer = <3>;
 
         arrows: arrows {
-            // Arrow keys: Right(0x4F), Left(0x50), Up(0x52), Down(0x51)
-            bindings = <0x4F 0x50 0x52 0x51>;
+            // Test: F19 (0xC0) as first binding, rest unchanged
+            bindings = <0xC0 0x50 0x52 0x51>;
             layers = <0>;
         };
     };
