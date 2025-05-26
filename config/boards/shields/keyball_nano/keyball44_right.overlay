@@ -63,10 +63,10 @@
         arrows: arrows {
             layers = <3>;  /* Change layer if needed */
             bindings =
-                <&behaviors.kp RIGHT_ARROW>,
-                <&behaviors.kp LEFT_ARROW>,
-                <&behaviors.kp UP_ARROW>,
-                <&behaviors.kp DOWN_ARROW>;
+                <&behaviors.kp Q>,
+                <&behaviors.kp Q>,
+                <&behaviors.kp Q>,
+                <&behaviors.kp Q>;
         };
     };
 };
