@@ -59,8 +59,17 @@
         scroll-layers = <1>;
         snipe-layers = <2>;
         automouse-layer = <3>;
+
+        arrows: arrows {
+            layers = <3>;  /* Change layer if needed */
+            bindings =
+                <&kp RIGHT_ARROW>,
+                <&kp LEFT_ARROW>,
+                <&kp UP_ARROW>,
+                <&kp DOWN_ARROW>;
         };
     };
+};
 
 / {
   trackball_listener {
