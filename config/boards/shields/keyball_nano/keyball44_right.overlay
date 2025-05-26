@@ -62,11 +62,8 @@
 
         arrows: arrows {
             layers = <3>;  /* Change layer if needed */
-            bindings =
-                <&behaviors_kp Q 0>,
-                <&behaviors_kp Q 0>,
-                <&behaviors_kp Q 0>,
-                <&behaviors_kp Q 0>;
+            // Use HID keycode for 'Q' (0x14) for all directions as a test
+            bindings = <0x14 0x14 0x14 0x14>;
         };
     };
 };
