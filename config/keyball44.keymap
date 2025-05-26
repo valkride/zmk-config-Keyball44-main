@@ -147,7 +147,17 @@
 &kp LEFT_CONTROL  &kp LALT  &kp LEFT_BRACKET  &lt 1 SPACE  &kp RIGHT_BRACKET               &kp RET  &lt 2 SPACE                                          &td_bs_del
 
 // Virtual position 99 for trackball event
-[99] = &kp F13
+&none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none
+&none &none &none &none &none &none &none &none &none &none
+&kp F13
             >;
         };
 
