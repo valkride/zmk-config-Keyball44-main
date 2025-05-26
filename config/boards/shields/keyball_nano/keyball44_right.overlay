@@ -61,9 +61,10 @@
         automouse-layer = <3>;
 
         arrows: arrows {
-            layers = <3>;  /* Change layer if needed */
-            // Use HID keycode for 'Q' (0x14) for all directions as a test
-            bindings = <0x14 0x14 0x14 0x14>;
+            compatible = "pixart,pmw3610-arrows";
+            // Arrow keys: Right(0x4F), Left(0x50), Up(0x52), Down(0x51)
+            bindings = <0x4F 0x50 0x52 0x51>;
+            layers = <1>;
         };
     };
 };
