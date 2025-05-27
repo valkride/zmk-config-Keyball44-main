@@ -149,6 +149,7 @@
     &kp DOWN 
 &kp LEFT    &kp RIGHT
     &kp UP
+    &kp UP
             >;
         };
 
