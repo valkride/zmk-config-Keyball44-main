@@ -46,9 +46,9 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: FUN}
   - '&td_bs_del'
   - $$mdi:arrow-up-bold$$
-  - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-right-bold$$
+  - $$mdi:arrow-down-bold$$
   SYM:
   - {t: '$$mdi:transfer$$', type: trans}
   - '!'
