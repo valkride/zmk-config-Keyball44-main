@@ -150,7 +150,6 @@
 &kp W
 &kp E
 &kp R
-&kp T
             >;
         };
 
@@ -166,7 +165,6 @@
 &kp W
 &kp E
 &kp R
-&kp T
             >;
         };
 
@@ -182,7 +180,6 @@
 &kp W
 &kp E
 &kp R
-&kp T
             >;
         };
     };
