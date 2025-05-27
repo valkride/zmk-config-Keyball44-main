@@ -54,18 +54,6 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-
-        /*   optional features   */
-        // scroll-layers = <1>;
-        // snipe-layers = <2>;
-        // automouse-layer = <3>;
-
-        arrows: arrows {
-            // Test: F19 (0xC0) as first binding, rest unchanged
-            bindings = <0xC0 0x50 0x52 0x51>;
-            layers = <0>;
-        };
-    };
 };
 
 / {
