@@ -135,7 +135,7 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: '$$mdi:apple-keyboard-command$$', h: PRINTSCREEN}
-  - '&td_ctrl_sym'
+  - '&td_ctrl_num'
   - $$mdi:apple-keyboard-option$$
   - {t: '[', s: '{'}
   - {t: '$$mdi:keyboard-space$$', h: NUM}
