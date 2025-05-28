@@ -173,9 +173,7 @@
 &trans             &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans          &mkp MB1        &mkp MB3        &mkp MB2              &trans                 &trans
 &trans             &trans           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans                &trans                 &trans
 &td_ctrl_base      &trans           &bt BT_PRV         &trans          &bt BT_NXT                      &trans          &none                                                 &trans
-
-&kp C_VOLUME_DOWN &kp MEDIA_PREV_TRACK &kp MEDIA_NEXT_TRACK &kp C_VOLUME_UP
-
+&kp C_VOLUME_DOWN  &kp MEDIA_PREV_TRACK  &kp MEDIA_NEXT_TRACK  &kp C_VOLUME_UP
             >;
         };
 
@@ -188,7 +186,6 @@
 &trans          &trans          &trans          &none           &trans                          &trans          &none                                               &trans
 
 &kp DOWN &kp LEFT &kp RIGHT &kp UP
-
             >;
         };
     };
