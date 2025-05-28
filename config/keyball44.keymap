@@ -1,7 +1,7 @@
 #define DEFAULT 0
 #define NUM     1
 #define SYM     2
-#define FUN     3
+#define LOCK     3
 #define MOUSE   4
 #define SCROLL  5
 #define SNIPE   6
@@ -46,6 +46,38 @@
             tapping-term-ms = <200>;
         };
 
+        td_esc_lock: td_esc_lock {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ESC_LOCK";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE>, <&tog LOCK>;
+            tapping-term-ms = <200>;
+        };
+
+        td_esc_base: td_esc_base {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ESC_BASE";
+            #binding-cells = <0>;
+            bindings = <&none>, <&tog DEFAULT>;
+            tapping-term-ms = <500>;
+        };
+
+        td_alt_sym: td_alt_sym {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ALT_SYM";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT>, <&tog SYM>;
+            tapping-term-ms = <200>;
+        };
+
+        td_alt_base: td_alt_base {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ALT_BASE";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT>, <&tog DEFAULT>;
+            tapping-term-ms = <200>;
+        };
+        
         cmqus: comma_question {
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA_QUESTION";
@@ -60,6 +92,14 @@
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        td_gui_prnscrn: td_gui_prnscrn {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_GUI_PRNSCRN";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI>, <&kp PRINTSCREEN>;
+            tapping-term-ms = <200>;
         };
 
         td_q_1: td_q_1 {
@@ -157,10 +197,10 @@
         default_layer {
             label = "QWRT";
             bindings = <
-&kp ESCAPE        &td_q_1         &td_w_2         &td_e_3         &td_r_4         &td_t_5         &td_y_6         &td_u_7         &td_i_8         &td_o_9         &td_p_0         &mt EQUAL MINUS
+&td_esc_lock        &td_q_1         &td_w_2         &td_e_3         &td_r_4         &td_t_5         &td_y_6         &td_u_7         &td_i_8         &td_o_9         &td_p_0         &mt EQUAL MINUS
 &kp TAB           &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt GRAVE SQT
-&kp LEFT_SHIFT    &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &mt PRINTSCREEN LEFT_GUI
-&td_ctrl_num      &kp LALT        &kp LEFT_BRACKET &kp SPACE      &kp RIGHT_BRACKET                &kp RET         &kp SPACE                                       &td_bs_del
+&kp LEFT_SHIFT    &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &td_gui_prnscrn
+&td_ctrl_num      &td_alt_sym        &kp LEFT_BRACKET &kp SPACE      &kp RIGHT_BRACKET                &kp RET         &kp SPACE                                       &td_bs_del
 
 &kp DOWN &kp LEFT &kp RIGHT &kp UP
             >;
@@ -169,10 +209,10 @@
         symbol_layer {
             label = "NUM";
             bindings = <
-&kp ESCAPE        &td_q_1         &td_w_2         &td_e_3         &td_r_4         &td_t_5         &td_y_6         &td_u_7         &td_i_8         &td_o_9         &td_p_0         &mt EQUAL MINUS
-&kp TAB           &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt GRAVE SQT
-&kp LEFT_SHIFT    &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &mt PRINTSCREEN LEFT_GUI
-&td_ctrl_base     &kp LALT        &kp LEFT_BRACKET &kp SPACE      &kp RIGHT_BRACKET                &kp RET         &kp SPACE                                       &td_bs_del
+&td_esc_lock        &none         &none         &none        &none        &none        &none       &none        &none        &none        &none         &none
+&kp TAB           &bt BT_SEL 1           &bt BT_SEL 2           &bt BT_SEL 3           &bt BT_SEL 4          &none          &none           &none           &none          &none           &none       &none
+&kp LEFT_SHIFT    &none           &none          &none          &none          &none           &none         &none           &none      &none         &none       &td_gui_prnscrn
+&td_ctrl_base     &kp LALT        &bt BT_PRV &bt BT_CLR      &bt BT_NXT                &none        &kp C_PP                                       &kp C_MUTE
 
 &kp C_VOL_DN &kp C_PREV &kp C_NEXT &kp C_VOL_UP
             >;
@@ -181,13 +221,23 @@
         function_layer {
             label = "SYM";
             bindings = <
-&kp ESCAPE        &td_q_1         &td_w_2         &td_e_3         &td_r_4         &td_t_5         &td_y_6         &td_u_7         &td_i_8         &td_o_9         &td_p_0         &mt EQUAL MINUS
-&kp TAB           &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt GRAVE SQT
-&kp LEFT_SHIFT    &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &mt PRINTSCREEN LEFT_GUI
-&td_ctrl_num      &kp LALT        &kp LEFT_BRACKET &lt 1 SPACE      &kp RIGHT_BRACKET                &kp RET         &lt 2 SPACE                                       &td_bs_del
+&td_esc_lock        &none        &none           &none           &none           &none           &kp F1           &kp F2           &kp F3        &kp F4         &none         &none
+&kp TAB           &none             &none             &none            &none             &none             &kp F5          &kp F6           &kp F7           &kp F8           &none     &none
+&kp LEFT_SHIFT    &none             &none             &none             &none             &none             &kp F9          &kp F10           &kp F11      &kp F12         &none       &mt PRINTSCREEN LEFT_GUI
+&kp LEFT_CONTROL      &td_alt_base        &none   &none       &none                  &none          &none                                         &none
 
-&kp DOWN &kp LEFT &kp RIGHT &kp UP
+&none &none &none &none
             >;
         };
+        lock_layer {
+            label = "LOCK";
+            bindings = <
+&td_esc_base        &none        &none           &none           &none           &none           &none           &none           &none        &none         &none         &none
+&none           &none             &none             &none            &none             &none             &none          &none           &none           &none           &none     &none
+&none    &none             &none             &none             &none             &none             &none          &none           &none      &none         &none       &none
+&none      &none        &none   &none       &none                  &none          &none                                         &none
+
+&none &none &none &none
+            >;
     };
 };
