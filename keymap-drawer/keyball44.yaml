@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: keyball44}
 layers:
   QWRT:
-  - $$mdi:keyboard-esc$$
+  - '&td_esc_lock'
   - '&td_q_1'
   - '&td_w_2'
   - '&td_e_3'
@@ -36,9 +36,9 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - {t: '$$mdi:apple-keyboard-command$$', h: PRINTSCREEN}
+  - '&td_gui_prnscrn'
   - '&td_ctrl_num'
-  - $$mdi:apple-keyboard-option$$
+  - '&td_alt_sym'
   - {t: '[', s: '{'}
   - $$mdi:keyboard-space$$
   - {t: ']', s: '}'}
@@ -50,100 +50,149 @@ layers:
   - $$mdi:arrow-right-bold$$
   - $$mdi:arrow-up-bold$$
   NUM:
-  - $$mdi:keyboard-esc$$
-  - '&td_q_1'
-  - '&td_w_2'
-  - '&td_e_3'
-  - '&td_r_4'
-  - '&td_t_5'
-  - '&td_y_6'
-  - '&td_u_7'
-  - '&td_i_8'
-  - '&td_o_9'
-  - '&td_p_0'
-  - {t: '-', h: '=', s: _}
+  - '&td_esc_lock'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-tab$$
-  - A
-  - S
-  - D
-  - F
-  - G
-  - H
-  - J
-  - K
-  - L
-  - {t: ;, s: ':'}
-  - {t: '''', h: '`', s: '"'}
+  - {h: '2', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '3', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '4', s: '$$mdi:bluetooth-connect$$'}
+  - {h: '5', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-shift$$
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
-  - {t: ',', s: <}
-  - {t: ., s: '>'}
-  - {t: /, s: '?'}
-  - {t: '$$mdi:apple-keyboard-command$$', h: PRINTSCREEN}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&td_gui_prnscrn'
   - '&td_ctrl_base'
   - $$mdi:apple-keyboard-option$$
-  - {t: '[', s: '{'}
-  - $$mdi:keyboard-space$$
-  - {t: ']', s: '}'}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - $$mdi:keyboard-space$$
-  - '&td_bs_del'
+  - {h: '$$mdi:arrow-up-bold$$', s: '$$mdi:bluetooth-connect$$'}
+  - $$mdi:bluetooth-off$$
+  - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:play-pause$$
+  - $$mdi:volume-off$$
   - $$mdi:volume-low$$
   - $$mdi:skip-previous$$
   - $$mdi:skip-next$$
   - $$mdi:volume-high$$
   SYM:
-  - $$mdi:keyboard-esc$$
-  - '&td_q_1'
-  - '&td_w_2'
-  - '&td_e_3'
-  - '&td_r_4'
-  - '&td_t_5'
-  - '&td_y_6'
-  - '&td_u_7'
-  - '&td_i_8'
-  - '&td_o_9'
-  - '&td_p_0'
-  - {t: '-', h: '=', s: _}
+  - '&td_esc_lock'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - F1
+  - F2
+  - F3
+  - F4
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-tab$$
-  - A
-  - S
-  - D
-  - F
-  - G
-  - H
-  - J
-  - K
-  - L
-  - {t: ;, s: ':'}
-  - {t: '''', h: '`', s: '"'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - F5
+  - F6
+  - F7
+  - F8
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:apple-keyboard-shift$$
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
-  - {t: ',', s: <}
-  - {t: ., s: '>'}
-  - {t: /, s: '?'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - F9
+  - F10
+  - F11
+  - F12
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:apple-keyboard-command$$', h: PRINTSCREEN}
-  - '&td_ctrl_num'
-  - $$mdi:apple-keyboard-option$$
-  - {t: '[', s: '{'}
-  - {t: '$$mdi:keyboard-space$$', h: NUM}
-  - {t: ']', s: '}'}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:keyboard-space$$', h: SYM}
-  - '&td_bs_del'
-  - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-right-bold$$
-  - $$mdi:arrow-up-bold$$
+  - $$mdi:apple-keyboard-control$$
+  - '&td_alt_base'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  LOCK:
+  - '&td_esc_base'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
