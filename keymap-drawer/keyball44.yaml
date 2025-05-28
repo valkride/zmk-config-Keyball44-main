@@ -94,9 +94,9 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
   - '&td_bs_del'
-  - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-right-bold$$
+  - $$mdi:volume-low$$
+  - $$mdi:skip-previous$$
+  - $$mdi:skip-next$$
   - $$mdi:volume-high$$
   FUN:
   - $$mdi:keyboard-esc$$
