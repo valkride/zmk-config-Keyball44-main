@@ -30,6 +30,22 @@
     // custom shift using mod-morph 
 
     behaviors {
+        td_ctrl_sym: td_ctrl_sym {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CTRL_SYM";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL>, <&tog SYM>;
+            tapping-term-ms = <200>;
+        };
+
+        td_ctrl_base: td_ctrl_base {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CTRL_BASE";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL>, <&tog DEFAULT>;
+            tapping-term-ms = <200>;
+        };
+
         cmqus: comma_question {
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA_QUESTION";
@@ -144,8 +160,8 @@
 &kp ESCAPE        &td_q_1         &td_w_2         &td_e_3         &td_r_4         &td_t_5         &td_y_6         &td_u_7         &td_i_8         &td_o_9         &td_p_0         &mt EQUAL MINUS
 &kp TAB           &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt GRAVE SQT
 &kp LEFT_SHIFT    &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &mt PRINTSCREEN LEFT_GUI
-&kp LEFT_CONTROL  &kp LALT        &kp LEFT_BRACKET &lt 1 SPACE      &kp RIGHT_BRACKET                &kp RET         &lt 2 SPACE                                       &td_bs_del
-// Virtual keys for trackball (positions 45, 46, 47, 48)
+&td_ctrl_sym      &kp LALT        &kp LEFT_BRACKET &lt 1 SPACE      &kp RIGHT_BRACKET                &kp RET         &lt 2 SPACE                                       &td_bs_del
+
 &kp DOWN &kp LEFT &kp RIGHT &kp UP
             >;
         };
@@ -153,15 +169,13 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-&trans          &kp EXCLAMATION  &kp AT_SIGN     &kp HASH        &kp DOLLAR      &kp PERCENT     &kp CARET       &kp AMPERSAND   &kp ASTERISK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans          &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans          &mkp MB1        &mkp MB3        &mkp MB2              &trans                 &trans
-&trans          &trans           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans                &trans                 &trans
-&bt BT_PRV      &bt BT_NXT       &trans          &none           &bt BT_CLR                      &trans          &none                                               &trans
+&trans             &kp EXCLAMATION  &kp AT_SIGN     &kp HASH        &kp DOLLAR      &kp PERCENT     &kp CARET       &kp AMPERSAND   &kp ASTERISK    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans             &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4    &trans          &mkp MB1        &mkp MB3        &mkp MB2              &trans                 &trans
+&trans             &trans           &trans          &trans          &trans          &trans          &trans          &trans          &trans          &trans                &trans                 &trans
+&td_ctrl_base      &none            &BT_PRV         &none           &bt BT_NXT                      &trans          &none                                                 &trans
 
-&kp Q
-&kp W
-&kp E
-&kp R
+&kp C_VOLUME_DOWN &kp MEDIA_PREV_TRACK &kp MEDIA_NEXT_TRACK &kp C_VOLUME_UP
+
             >;
         };
 
@@ -173,10 +187,8 @@
 &trans          &trans          &trans          &trans          &trans          &trans          &kp F9          &kp F10         &kp F11         &kp F12         &trans          &trans
 &trans          &trans          &trans          &none           &trans                          &trans          &none                                               &trans
 
-&kp Q
-&kp W
-&kp E
-&kp R
+&kp DOWN &kp LEFT &kp RIGHT &kp UP
+
             >;
         };
     };
