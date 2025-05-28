@@ -211,7 +211,7 @@
 &td_esc_lock        &none         &none         &none        &none        &none        &none       &none        &none        &none        &none         &none
 &kp TAB           &bt BT_SEL 1           &bt BT_SEL 2           &bt BT_SEL 3           &bt BT_SEL 4          &none          &none           &none           &none          &none           &none       &none
 &kp LEFT_SHIFT    &none           &none          &none          &none          &none           &none         &none           &none      &none         &none       &td_gui_prnscrn
-&td_ctrl_base     &kp LALT        &bt BT_PRV &bt BT_CLR      &bt BT_NXT                &none        &kp C_PP                                       &kp C_MUTE
+&td_ctrl_num     &kp LALT        &bt BT_PRV &bt BT_CLR      &bt BT_NXT                &none        &kp C_PP                                       &kp C_MUTE
 
 &kp C_VOL_DN &kp C_PREV &kp C_NEXT &kp C_VOL_UP
             >;
@@ -223,7 +223,7 @@
 &td_esc_lock        &none        &none           &none           &none           &none           &kp F1           &kp F2           &kp F3        &kp F4         &none         &none
 &kp TAB           &none             &none             &none            &none             &none             &kp F5          &kp F6           &kp F7           &kp F8           &none     &none
 &kp LEFT_SHIFT    &none             &none             &none             &none             &none             &kp F9          &kp F10           &kp F11      &kp F12         &none       &mt PRINTSCREEN LEFT_GUI
-&kp LEFT_CONTROL      &td_alt_base        &none   &none       &none                  &none          &none                                         &none
+&kp LEFT_CONTROL      &td_alt_sym        &none   &none       &none                  &none          &none                                         &none
 
 &none &none &none &none
             >;
@@ -231,7 +231,7 @@
         lock_layer {
             label = "LOCK";
             bindings = <
-&td_esc_base        &none        &none           &none           &none           &none           &none           &none           &none        &none         &none         &none
+&td_esc_lock        &none        &none           &none           &none           &none           &none           &none           &none        &none         &none         &none
 &none           &none             &none             &none            &none             &none             &none          &none           &none           &none           &none     &none
 &none    &none             &none             &none             &none             &none             &none          &none           &none      &none         &none       &none
 &none      &none        &none   &none       &none                  &none          &none                                         &none
