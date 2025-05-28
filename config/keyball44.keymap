@@ -1,7 +1,7 @@
 #define DEFAULT 0
 #define NUM     1
 #define SYM     2
-#define LOCK     3
+#define LOCK    3
 #define MOUSE   4
 #define SCROLL  5
 #define SNIPE   6
