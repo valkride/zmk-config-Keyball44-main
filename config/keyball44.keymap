@@ -30,11 +30,11 @@
     // custom shift using mod-morph 
 
     behaviors {
-        td_ctrl_sym: td_ctrl_sym {
+        td_ctrl_num: td_ctrl_num {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CTRL_SYM";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL>, <&tog SYM>;
+            bindings = <&kp LEFT_CONTROL>, <&tog NUM>;
             tapping-term-ms = <200>;
         };
 
@@ -160,14 +160,14 @@
 &kp ESCAPE        &td_q_1         &td_w_2         &td_e_3         &td_r_4         &td_t_5         &td_y_6         &td_u_7         &td_i_8         &td_o_9         &td_p_0         &mt EQUAL MINUS
 &kp TAB           &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt GRAVE SQT
 &kp LEFT_SHIFT    &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &mt PRINTSCREEN LEFT_GUI
-&td_ctrl_sym      &kp LALT        &kp LEFT_BRACKET &lt 1 SPACE      &kp RIGHT_BRACKET                &kp RET         &lt 2 SPACE                                       &td_bs_del
+&td_ctrl_num      &kp LALT        &kp LEFT_BRACKET &kp SPACE      &kp RIGHT_BRACKET                &kp RET         &kp SPACE                                       &td_bs_del
 
 &kp DOWN &kp LEFT &kp RIGHT &kp UP
             >;
         };
 
         symbol_layer {
-            label = "SYM";
+            label = "NUM";
             bindings = <
 &kp ESCAPE        &td_q_1         &td_w_2         &td_e_3         &td_r_4         &td_t_5         &td_y_6         &td_u_7         &td_i_8         &td_o_9         &td_p_0         &mt EQUAL MINUS
 &kp TAB           &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt GRAVE SQT
@@ -179,7 +179,7 @@
         };
 
         function_layer {
-            label = "FUN";
+            label = "SYM";
             bindings = <
 &kp ESCAPE        &td_q_1         &td_w_2         &td_e_3         &td_r_4         &td_t_5         &td_y_6         &td_u_7         &td_i_8         &td_o_9         &td_p_0         &mt EQUAL MINUS
 &kp TAB           &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt GRAVE SQT
