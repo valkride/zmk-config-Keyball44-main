@@ -174,7 +174,7 @@
 &kp LEFT_SHIFT    &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &mt PRINTSCREEN LEFT_GUI
 &td_ctrl_base     &kp LALT        &kp LEFT_BRACKET &kp SPACE      &kp RIGHT_BRACKET                &kp RET         &kp SPACE                                       &td_bs_del
 
-&kp DOWN &kp LEFT &kp RIGHT &kp C_VOL_UP
+&kp C_VOL_DN &kp C_PREV &kp C_NEXT &kp C_VOL_UP
             >;
         };
 
