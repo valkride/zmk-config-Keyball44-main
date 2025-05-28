@@ -97,7 +97,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-right-bold$$
-  - $$mdi:arrow-up-bold$$
+  - $$mdi:volume-high$$
   FUN:
   - $$mdi:keyboard-esc$$
   - '&td_q_1'
