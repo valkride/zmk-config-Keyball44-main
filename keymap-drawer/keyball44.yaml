@@ -88,9 +88,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - '&td_ctrl_base'
   - {t: '$$mdi:transfer$$', type: trans}
-  - '&BT_PRV'
+  - {h: '$$mdi:arrow-up-bold$$', s: '$$mdi:bluetooth-connect$$'}
   - {type: held}
-  - '&BT_NXT'
+  - {h: '$$mdi:arrow-down-bold$$', s: '$$mdi:bluetooth-connect$$'}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:transfer$$', type: trans}
