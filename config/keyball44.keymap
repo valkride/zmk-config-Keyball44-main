@@ -26,10 +26,9 @@
 
 &caps_word { continue-list = <UNDERSCORE MINUS>; };
 
-/ {
-    // custom shift using mod-morph 
-
+/ { 
     behaviors {
+        // Tap Dance Behaviors layer swap
         td_ctrl_num: td_ctrl_num {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_CTRL_SYM";
@@ -77,7 +76,7 @@
             bindings = <&kp LEFT_ALT>, <&tog DEFAULT>;
             tapping-term-ms = <200>;
         };
-        
+        // Morph Behaviors
         cmqus: comma_question {
             compatible = "zmk,behavior-mod-morph";
             label = "COMMA_QUESTION";
@@ -93,7 +92,7 @@
             bindings = <&kp DOT>, <&kp SEMI>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        
+        // Tap Dance Behaviors
         td_gui_prnscrn: td_gui_prnscrn {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_GUI_PRNSCRN";
