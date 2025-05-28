@@ -37,19 +37,19 @@ layers:
   - {t: ., s: '>'}
   - {t: /, s: '?'}
   - {t: '$$mdi:apple-keyboard-command$$', h: PRINTSCREEN}
-  - '&td_ctrl_sym'
+  - '&td_ctrl_num'
   - $$mdi:apple-keyboard-option$$
   - {t: '[', s: '{'}
-  - {t: '$$mdi:keyboard-space$$', h: SYM}
+  - $$mdi:keyboard-space$$
   - {t: ']', s: '}'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:keyboard-space$$', h: FUN}
+  - $$mdi:keyboard-space$$
   - '&td_bs_del'
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-right-bold$$
   - $$mdi:arrow-up-bold$$
-  SYM:
+  NUM:
   - $$mdi:keyboard-esc$$
   - '&td_q_1'
   - '&td_w_2'
@@ -89,7 +89,7 @@ layers:
   - '&td_ctrl_base'
   - $$mdi:apple-keyboard-option$$
   - {t: '[', s: '{'}
-  - {t: '$$mdi:keyboard-space$$', type: held}
+  - $$mdi:keyboard-space$$
   - {t: ']', s: '}'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
@@ -98,7 +98,7 @@ layers:
   - $$mdi:skip-previous$$
   - $$mdi:skip-next$$
   - $$mdi:volume-high$$
-  FUN:
+  SYM:
   - $$mdi:keyboard-esc$$
   - '&td_q_1'
   - '&td_w_2'
@@ -138,10 +138,10 @@ layers:
   - '&td_ctrl_sym'
   - $$mdi:apple-keyboard-option$$
   - {t: '[', s: '{'}
-  - {t: '$$mdi:keyboard-space$$', h: SYM}
+  - {t: '$$mdi:keyboard-space$$', h: NUM}
   - {t: ']', s: '}'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:keyboard-space$$', h: FUN, type: held}
+  - {t: '$$mdi:keyboard-space$$', h: SYM}
   - '&td_bs_del'
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-left-bold$$
