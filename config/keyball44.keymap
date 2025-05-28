@@ -231,7 +231,7 @@
         lock_layer {
             label = "LOCK";
             bindings = <
-&td_esc_bas        &none        &none           &none           &none           &none           &none           &none           &none        &none         &none         &none
+&td_esc_base        &none        &none           &none           &none           &none           &none           &none           &none        &none         &none         &none
 &none           &none             &none             &none            &none             &none             &none          &none           &none           &none           &none     &none
 &none    &none             &none             &none             &none             &none             &none          &none           &none      &none         &none       &none
 &none      &none        &none   &none       &none                  &none          &none                                         &none
