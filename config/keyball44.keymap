@@ -37,27 +37,11 @@
             tapping-term-ms = <200>;
         };
 
-        td_ctrl_base: td_ctrl_base {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_CTRL_BASE";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL>, <&tog DEFAULT>;
-            tapping-term-ms = <200>;
-        };
-
         td_esc_lock: td_esc_lock {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ESC_LOCK";
             #binding-cells = <0>;
             bindings = <&kp ESCAPE>, <&tog LOCK>;
-            tapping-term-ms = <200>;
-        };
-
-        td_esc_base: td_esc_base {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_ESC_BASE";
-            #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&tog DEFAULT>;
             tapping-term-ms = <200>;
         };
 
@@ -67,31 +51,7 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT>, <&tog SYM>;
             tapping-term-ms = <200>;
-        };
-
-        td_alt_base: td_alt_base {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_ALT_BASE";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT>, <&tog DEFAULT>;
-            tapping-term-ms = <200>;
-        };
-        // Morph Behaviors
-        cmqus: comma_question {
-            compatible = "zmk,behavior-mod-morph";
-            label = "COMMA_QUESTION";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp QUESTION>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        dtsmi: dot_semi {
-            compatible = "zmk,behavior-mod-morph";
-            label = "DOT_SEMI";
-            #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp SEMI>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
+        };.
         // Tap Dance Behaviors
         td_gui_prnscrn: td_gui_prnscrn {
             compatible = "zmk,behavior-tap-dance";
@@ -231,7 +191,7 @@
         lock_layer {
             label = "LOCK";
             bindings = <
-&td_esc_base        &none        &none           &none           &none           &none           &none           &none           &none        &none         &none         &none
+&td_esc_lock        &none        &none           &none           &none           &none           &none           &none           &none        &none         &none         &none
 &none           &none             &none             &none            &none             &none             &none          &none           &none           &none           &none     &none
 &none    &none             &none             &none             &none             &none             &none          &none           &none      &none         &none       &none
 &none      &none        &none   &none       &none                  &none          &none                                         &none
