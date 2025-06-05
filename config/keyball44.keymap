@@ -51,7 +51,8 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_ALT>, <&tog SYM>;
             tapping-term-ms = <200>;
-        };.
+        };
+        
         // Tap Dance Behaviors
         td_gui_prnscrn: td_gui_prnscrn {
             compatible = "zmk,behavior-tap-dance";
