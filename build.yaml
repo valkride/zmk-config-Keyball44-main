@@ -14,8 +14,8 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: keyball44_left nice_oled molekula raw_hid_adapter
+    shield: keyball44_left nice_oled raw_hid_adapter
   - board: nice_nano_v2
-    shield: keyball44_right nice_oled molekula raw_hid_adapter
+    shield: keyball44_right nice_oled raw_hid_adapter
   - board: nice_nano_v2
     shield: settings_reset
