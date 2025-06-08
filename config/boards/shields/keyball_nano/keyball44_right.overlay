@@ -57,8 +57,10 @@
     };
 };
 / {
-  trackball_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-  };
+    compatible = "zmk,keyboard";
+    product-id = <0x615E>;
+    trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
 };

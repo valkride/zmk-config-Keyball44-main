@@ -6,6 +6,11 @@
 
 #include "keyball44.dtsi"
 
+/ {
+    compatible = "zmk,keyboard";
+    product-id = <0x615E>;
+};
+
 &kscan0 {
 	col-gpios
 		= <&pro_micro 4 GPIO_ACTIVE_HIGH>
