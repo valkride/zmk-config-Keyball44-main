@@ -13,5 +13,8 @@ manifest:
     - name: zmk-nice-oled
       remote: valkride
       revision: main
+    - name: zmk-raw-hid
+      remote: valkride
+      revision: main
   self:
     path: config
