@@ -53,10 +53,10 @@
         { "row": 3, "col":  9, "x":  8.5, "y": 5.7, "r":  -10, "rx": 0, "ry":  0   },
         { "row": 3, "col": 14, "x": 14, "y": 3.5 },
 
-        { "row": 4, "col":  0, "x":  0, "y": 0, "draw": false },
-        { "row": 4, "col":  1, "x":  0, "y": 0, "draw": false },
-        { "row": 4, "col":  2, "x":  0, "y": 0, "draw": false },
-        { "row": 4, "col":  3, "x":  0, "y": 0, "draw": false }
+        { "row": 4, "col":  0, "x":  0, "y": 0, "draw": false, "ghost": true },
+        { "row": 4, "col":  1, "x":  0, "y": 0, "draw": false, "ghost": true },
+        { "row": 4, "col":  2, "x":  0, "y": 0, "draw": false, "ghost": true },
+        { "row": 4, "col":  3, "x":  0, "y": 0, "draw": false, "ghost": true }
       ]
     }
   },
