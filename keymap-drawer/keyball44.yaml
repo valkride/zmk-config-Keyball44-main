@@ -43,7 +43,7 @@ layers:
   - '&td_space_period'
   - {t: ']', s: '}'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - space
+  - $$mdi:keyboard-space$$
   - '&td_bs_del'
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-left-bold$$
