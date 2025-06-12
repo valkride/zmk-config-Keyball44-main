@@ -168,7 +168,7 @@
 &td_esc_lock        &td_q_1         &td_w_2         &td_e_3         &td_r_4         &td_t_5         &td_y_6         &td_u_7         &td_i_8         &td_o_9         &td_p_0         &mt EQUAL MINUS
 &kp TAB           &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt GRAVE SQT
 &kp LEFT_SHIFT    &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &td_gui_prnscrn
-&td_ctrl_num      &td_alt_sym        &kp LEFT_BRACKET &td_space_period      &kp RIGHT_BRACKET                &kp RET         &kp space                                       &td_bs_del
+&td_ctrl_num      &td_alt_sym        &kp LEFT_BRACKET &td_space_period      &kp RIGHT_BRACKET                &kp RET         &kp SPACE                                       &td_bs_del
 
 &kp DOWN &kp LEFT &kp RIGHT &kp UP
             >;
