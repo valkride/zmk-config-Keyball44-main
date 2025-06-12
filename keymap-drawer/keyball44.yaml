@@ -40,10 +40,10 @@ layers:
   - '&td_ctrl_num'
   - '&td_alt_sym'
   - {t: '[', s: '{'}
-  - $$mdi:keyboard-space$$
+  - '&td_space_period'
   - {t: ']', s: '}'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - $$mdi:keyboard-space$$
+  - space
   - '&td_bs_del'
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-left-bold$$
