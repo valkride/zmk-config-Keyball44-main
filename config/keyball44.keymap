@@ -150,11 +150,17 @@
             tapping-term-ms = <200>;
         };
 
+        macro_dot_space: macro_dot_space {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_DOT_SPACE";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp SPACE>;
+        };
         td_space_period: td_space_period {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SPACE_PERIOD";
             #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp DOT &kp SPACE>;
+            bindings = <&kp SPACE>, <&macro_dot_space>;
             tapping-term-ms = <200>;
         };
     };
