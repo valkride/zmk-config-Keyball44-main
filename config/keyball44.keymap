@@ -46,7 +46,6 @@
             label = "HOLD_AB_TD";
             #binding-cells = <0>;
             bindings = <&td_ab>, <&tog LOCK>;
-            flavor = "hold-preferred";
             tapping-term-ms = <500>;
         };
         //system layer
