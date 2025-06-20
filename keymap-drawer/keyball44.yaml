@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: keyball44}
 layers:
   QWRT:
-  - '&td_esc_lock'
+  - '&hold_ab_td'
   - Q
   - W
   - E
@@ -50,7 +50,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - $$mdi:arrow-up-bold$$
   SYM:
-  - '&td_esc_lock'
+  - '&hold_ab_td'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -99,7 +99,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   NUM:
-  - '&td_esc_lock'
+  - '&hold_ab_td'
   - '1'
   - '2'
   - '3'
@@ -140,9 +140,9 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:play-pause$$
   - $$mdi:volume-off$$
+  - $$mdi:play-pause$$
+  - '&td_bs_del'
   - $$mdi:volume-low$$
   - $$mdi:skip-previous$$
   - $$mdi:skip-next$$
