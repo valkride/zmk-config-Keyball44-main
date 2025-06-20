@@ -38,7 +38,7 @@ layers:
   - {t: /, s: '?'}
   - '&td_gui_prnscrn'
   - '&td_ctrl_sym'
-  - '&td_alt_num'
+  - $$mdi:apple-keyboard-option$$
   - {t: '[', s: '{'}
   - '&td_space_macro'
   - {t: ']', s: '}'}
@@ -136,7 +136,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '&td_gui_prnscrn'
   - $$mdi:apple-keyboard-control$$
-  - '&td_alt_num'
+  - $$mdi:apple-keyboard-option$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
