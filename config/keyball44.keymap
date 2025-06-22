@@ -37,24 +37,24 @@
         };
 
         // Hold-Tap Behavior for ESC/NUM layer
-        // Single tap: ESC, Hold: NUM layer (with mo/toggle dance)
+        // Single tap: ESC, Hold: NUM layer behavior
         ht_esc_num: ht_esc_num {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_ESC_NUM";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&td_num_mo_tog>, <&kp>;
+            bindings = <&td_num_mo_tog>, <&kp ESCAPE>;
         };
 
-        // Tap Dance for ESC/LOCK toggle
-        // Single tap: ESC, Double tap: LOCK layer toggle, Hold: NUM layer (mo/toggle)
+        // Tap Dance for main behavior
+        // Single tap: ESC/NUM hold-tap, Double tap: LOCK layer toggle
         td_esc_lock_num: td_esc_lock_num {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ESC_LOCK_NUM";
             #binding-cells = <0>;
-            bindings = <&ht_esc_num 0 ESCAPE>, <&tog LOCK>;
+            bindings = <&ht_esc_num>, <&tog LOCK>;
             tapping-term-ms = <300>;
         };
         //system layer
