@@ -38,7 +38,7 @@
             label = "TD_AB";
             #binding-cells = <0>;
             bindings = <&kp ESCAPE>, <&tog NUM>;
-            tapping-term-ms = <500>;
+            tapping-term-ms = <200>;
         };
 
         hold_ab_td: hold_ab_td {
