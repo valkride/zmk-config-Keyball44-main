@@ -26,27 +26,27 @@
 
 &caps_word { continue-list = <UNDERSCORE MINUS>; };
 
-/ { 
-    behaviors {
-        // Tap Dance Behaviors layer swap
-        //TODO:
-        //single tap: ESC
-        //double-tap: LOCK layer
-        //hold: number layer
-        td_ab: td_ab {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_AB";
-            #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&tog NUM>;
+/ {    behaviors {
+        // Hold-Tap Behavior for ESC/NUM layer
+        // Single tap: ESC, Hold: NUM layer
+        ht_esc_num: ht_esc_num {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_ESC_NUM";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&mo>, <&kp>;
         };
 
-        hold_ab_td: hold_ab_td {
+        // Tap Dance for ESC/LOCK toggle
+        // Single tap: ESC, Double tap: LOCK layer toggle, Hold: NUM layer
+        td_esc_lock_num: td_esc_lock_num {
             compatible = "zmk,behavior-tap-dance";
-            label = "HOLD_AB_TD";
+            label = "TD_ESC_LOCK_NUM";
             #binding-cells = <0>;
-            bindings = <&td_ab>, <&tog LOCK>;
-            tapping-term-ms = <500>;
+            bindings = <&ht_esc_num NUM ESCAPE>, <&tog LOCK>;
+            tapping-term-ms = <300>;
         };
         //system layer
         td_ctrl_sym: td_ctrl_sym {
@@ -113,36 +113,30 @@
     };
 
     keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
+        compatible = "zmk,keymap";        default_layer {
             label = "QWRT";
             bindings = <
-&hold_ab_td        &kp Q         &kp W         &kp E         &kp R         &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &mt EQUAL MINUS
+&td_esc_lock_num   &kp Q         &kp W         &kp E         &kp R         &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &mt EQUAL MINUS
 &kp TAB           &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt GRAVE SQT
 &kp LEFT_SHIFT    &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &td_gui_prnscrn
 &td_ctrl_sym      &kp LALT        &kp LEFT_BRACKET &td_space_macro     &kp RIGHT_BRACKET                &kp RET         &kp SPACE                                       &td_bs_del
 
 &kp DOWN &kp LEFT &kp RIGHT &kp UP
             >;
-        };
-
-        symbol_layer {
+        };        symbol_layer {
             label = "SYM";
             bindings = <
-&hold_ab_td        &none         &none         &none        &none        &none        &none       &none        &none        &none        &none         &none
+&td_esc_lock_num   &none         &none         &none        &none        &none        &none       &none        &none        &none        &none         &none
 &kp TAB           &bt BT_SEL 0           &bt BT_SEL 1           &bt BT_SEL 2           &bt BT_SEL 3          &none          &none           &none           &none          &none           &none       &none
 &kp LEFT_SHIFT    &none           &none          &none          &none          &none           &none         &none           &none      &none         &none       &td_gui_prnscrn
 &td_ctrl_sym     &kp LALT        &bt BT_PRV &bt BT_CLR      &bt BT_NXT                &none        &none                                         &none
 
 &none &none &none &none
             >;
-        };
-
-        function_layer {
+        };        function_layer {
             label = "NUM";
             bindings = <
-&hold_ab_td        &kp NUMBER_1        &kp NUMBER_2           &kp NUMBER_3           &kp NUMBER_4           &kp NUMBER_5           &kp NUMBER_6           &kp NUMBER_7           &kp NUMBER_8        &kp NUMBER_9         &kp NUMBER_0         &none
+&td_esc_lock_num   &kp NUMBER_1        &kp NUMBER_2           &kp NUMBER_3           &kp NUMBER_4           &kp NUMBER_5           &kp NUMBER_6           &kp NUMBER_7           &kp NUMBER_8        &kp NUMBER_9         &kp NUMBER_0         &none
 &kp TAB           &none            &kp F1             &kp F2            &kp F3             &kp F4             &kp F5          &kp F6           &kp F7           &kp F8           &none     &none
 &kp LEFT_SHIFT    &none             &kp F9             &kp F10             &kp F11             &kp F12             &kp F13          &kp F14           &kp F15      &kp F16         &none       &td_gui_prnscrn
 &kp LEFT_CONTROL      &kp LALT        &none   &none       &none                  &kp C_MUTE          &kp C_PP                                       &td_bs_del
