@@ -27,8 +27,17 @@
 &caps_word { continue-list = <UNDERSCORE MINUS>; };
 
 / {    behaviors {
+        // Tap Dance for NUM layer - short hold = momentary, long hold = toggle
+        td_num_mo_tog: td_num_mo_tog {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NUM_MO_TOG";
+            #binding-cells = <0>;
+            bindings = <&mo NUM>, <&tog NUM>;
+            tapping-term-ms = <400>;
+        };
+
         // Hold-Tap Behavior for ESC/NUM layer
-        // Single tap: ESC, Hold: NUM layer
+        // Single tap: ESC, Hold: NUM layer (with mo/toggle dance)
         ht_esc_num: ht_esc_num {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_ESC_NUM";
@@ -36,16 +45,16 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&mo>, <&kp>;
+            bindings = <&td_num_mo_tog>, <&kp>;
         };
 
         // Tap Dance for ESC/LOCK toggle
-        // Single tap: ESC, Double tap: LOCK layer toggle, Hold: NUM layer
+        // Single tap: ESC, Double tap: LOCK layer toggle, Hold: NUM layer (mo/toggle)
         td_esc_lock_num: td_esc_lock_num {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ESC_LOCK_NUM";
             #binding-cells = <0>;
-            bindings = <&ht_esc_num NUM ESCAPE>, <&tog LOCK>;
+            bindings = <&ht_esc_num 0 ESCAPE>, <&tog LOCK>;
             tapping-term-ms = <300>;
         };
         //system layer
