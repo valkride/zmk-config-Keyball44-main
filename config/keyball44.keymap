@@ -41,7 +41,7 @@
             label = "HT_ESC_NUM";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <180>;
             quick-tap-ms = <150>;
             bindings = <&td_num_mo_tog>, <&kp>;
         };        // Tap Dance for main behavior
@@ -51,7 +51,7 @@
             label = "TD_ESC_LOCK_NUM";
             #binding-cells = <0>;
             bindings = <&ht_esc_num 0 ESCAPE>, <&tog LOCK>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <150>;
         };
         //system layer
         td_ctrl_sym: td_ctrl_sym {
