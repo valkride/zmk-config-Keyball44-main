@@ -111,13 +111,22 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA &kp SPACE>;
         };
-
+        
         // Dot + Space
         macro_dot_space: macro_dot_space {
             compatible = "zmk,behavior-macro";
             label = "MACRO_DOT_SPACE";
             #binding-cells = <0>;
-            bindings = <&kp DOT &kp SPACE>;    };
+            bindings = <&kp DOT &kp SPACE>;
+        };
+
+        // Unlock from sleep and return to default layer
+        macro_unlock_to_default: macro_unlock_to_default {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_UNLOCK_DEFAULT";
+            #binding-cells = <0>;
+            bindings = <&to QWRT &kp ESCAPE>;
+        };
     };
     // ===== KEYMAP =====
     keymap {
