@@ -31,8 +31,9 @@
 
 / {
     behaviors {
-        // ===== PRIMARY BEHAVIORS =====
-          // Main key behavior: Tap for ESC/SLEEP, Hold for NUM toggle
+    // ===== PRIMARY BEHAVIORS =====
+        
+        // Main key behavior: Tap for ESC/SLEEP, Hold for NUM toggle
         ht_main: ht_main {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_MAIN";
@@ -61,7 +62,7 @@
             tapping-term-ms = <400>;
         };
 
-        // ===== LAYER TOGGLES =====
+    // ===== LAYER TOGGLES =====
         
         // Control with SYM layer toggle
         td_ctrl_sym: td_ctrl_sym {
@@ -72,16 +73,7 @@
             tapping-term-ms = <500>;
         };
 
-        // Alt with NUM layer toggle
-        td_alt_num: td_alt_num {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_ALT_NUM";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT>, <&tog NUM>;
-            tapping-term-ms = <500>;
-        };
-
-        // ===== UTILITY TAP DANCES =====
+    // ===== UTILITY TAP DANCES =====
         
         // GUI with Print Screen
         td_gui_prnscrn: td_gui_prnscrn {
@@ -110,7 +102,7 @@
             tapping-term-ms = <200>;
         };
 
-        // ===== MACROS =====
+    // ===== MACROS =====
         
         // Comma + Space
         macro_comma_space: macro_comma_space {
