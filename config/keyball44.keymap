@@ -3,7 +3,7 @@
 #define DEFAULT 0
 #define SYM     1
 #define NUM     2
-#define LOCK   3
+#define LOCK    3
 
 // Includes
 #include <behaviors/mouse_keys.dtsi>
@@ -42,14 +42,14 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             bindings = <&tog>, <&td_esc_sleep>;
-        };
-
-        // ESC with double-tap for SLEEP layer
+        }; 
+        
+        // ESC with double-tap for LOCK layer
         td_esc_sleep: td_esc_sleep {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_ESC_SLEEP";
             #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&tog SLEEP>;
+            bindings = <&kp ESCAPE>, <&tog LOCK>;
             tapping-term-ms = <300>;
         };
 
@@ -119,13 +119,13 @@
             #binding-cells = <0>;
             bindings = <&kp DOT &kp SPACE>;
         };
-
+        
         // Unlock from sleep and return to default layer
         macro_unlock_to_default: macro_unlock_to_default {
             compatible = "zmk,behavior-macro";
             label = "MACRO_UNLOCK_DEFAULT";
             #binding-cells = <0>;
-            bindings = <&to QWRT &kp ESCAPE>;
+            bindings = <&to DEFAULT &kp ESCAPE>;
         };
     };
     // ===== KEYMAP =====
@@ -178,9 +178,7 @@
             // VOL_DOWN | PREV | NEXT | VOL_UP
                &kp C_VOL_DN  &kp C_PREV  &kp C_NEXT  &kp C_VOL_UP
             >;
-        };
-
-        sleep_layer {
+        };        sleep_layer {
             label = "LOCK";
             bindings = <
             // TRIPLE_UNLOCK | - | - | - | - | -     |        | - | - | - | - | - | -
