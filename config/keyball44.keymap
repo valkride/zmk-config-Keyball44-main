@@ -62,16 +62,7 @@
             label = "TD_CTRL_SYM";
             #binding-cells = <0>;
             bindings = <&kp LEFT_CONTROL>, <&tog SYM>;
-            tapping-term-ms = <500>;
-        };
-        //lock layer
-        td_esc_lock: td_esc_lock {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_ESC_LOCK";
-            #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&tog LOCK>;
-            tapping-term-ms = <500>;
-        };
+            tapping-term-ms = <500>;        };
         //number layer
         td_alt_num: td_alt_num {
             compatible = "zmk,behavior-tap-dance";
