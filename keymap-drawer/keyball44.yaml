@@ -148,7 +148,7 @@ layers:
   - $$mdi:skip-next$$
   - $$mdi:volume-high$$
   LOCK:
-  - '&td_esc_lock'
+  - '&macro_unlock_to_default'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
