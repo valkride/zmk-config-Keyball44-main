@@ -1,17 +1,18 @@
+// Keyball44 ZMK Configuration
+// Layer definitions
 #define DEFAULT 0
 #define SYM     1
 #define NUM     2
-#define LOCK    3
-#define MOUSE   4
-#define SCROLL  5
-#define SNIPE   6
+#define LOCK   3
 
+// Includes
 #include <behaviors/mouse_keys.dtsi>
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+// Global behavior overrides
 &lt {
     tapping-term-ms = <240>;
     flavor = "balanced";
@@ -24,16 +25,14 @@
     quick-tap-ms = <150>;
 };
 
-&caps_word { continue-list = <UNDERSCORE MINUS>; };
+&caps_word { 
+    continue-list = <UNDERSCORE MINUS>; 
+};
 
-/ {    behaviors {        // Tap Dance for ESC with double-tap to LOCK
-        td_esc_lock: td_esc_lock {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_ESC_LOCK";
-            #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&tog LOCK>;
-            tapping-term-ms = <300>;
-        };        // Primary Hold-Tap: Tap for ESC/LOCK dance, Hold to toggle NUM
+/ {
+    behaviors {
+        // ===== PRIMARY BEHAVIORS =====
+          // Main key behavior: Tap for ESC/SLEEP, Hold for NUM toggle
         ht_main: ht_main {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_MAIN";
@@ -41,61 +40,16 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&tog>, <&td_esc_lock>;
-        };
-        //system layer
-        td_ctrl_sym: td_ctrl_sym {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_CTRL_SYM";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_CONTROL>, <&tog SYM>;
-            tapping-term-ms = <500>;        };
-        //number layer
-        td_alt_num: td_alt_num {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_ALT_NUM";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT>, <&tog NUM>;
-            tapping-term-ms = <500>;
-        };
-        
-        // Tap Dance Behaviors
-        td_gui_prnscrn: td_gui_prnscrn {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_GUI_PRNSCRN";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_GUI>, <&kp PRINTSCREEN>;
-            tapping-term-ms = <200>;
+            bindings = <&tog>, <&td_esc_sleep>;
         };
 
-        td_bs_del: td_bs_del {
+        // ESC with double-tap for SLEEP layer
+        td_esc_sleep: td_esc_sleep {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_BS_DEL";
+            label = "TD_ESC_SLEEP";
             #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-            tapping-term-ms = <200>;
-        };
-
-        //space macro 
-        macro_comma_space: macro_comma_space{
-            compatible = "zmk,behavior-macro";
-            label = "MACRO_COMMA SPACE";
-            #binding-cells = <0>;
-            bindings = <&kp COMMA &kp SPACE>;
-        };
-        macro_dot_space: macro_dot_space {
-            compatible = "zmk,behavior-macro";
-            label = "MACRO_DOT_SPACE";
-            #binding-cells = <0>;
-            bindings = <&kp DOT &kp SPACE>;
-        };
-
-        // Macro to return to default layer and send ESC
-        macro_unlock_to_default: macro_unlock_to_default {
-            compatible = "zmk,behavior-macro";
-            label = "UNLOCK_TO_DEFAULT";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT>, <&kp ESCAPE>;
+            bindings = <&kp ESCAPE>, <&tog SLEEP>;
+            tapping-term-ms = <300>;
         };
 
         // Triple-tap to unlock from sleep/travel mode
@@ -107,6 +61,47 @@
             tapping-term-ms = <400>;
         };
 
+        // ===== LAYER TOGGLES =====
+        
+        // Control with SYM layer toggle
+        td_ctrl_sym: td_ctrl_sym {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_CTRL_SYM";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_CONTROL>, <&tog SYM>;
+            tapping-term-ms = <500>;
+        };
+
+        // Alt with NUM layer toggle
+        td_alt_num: td_alt_num {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_ALT_NUM";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ALT>, <&tog NUM>;
+            tapping-term-ms = <500>;
+        };
+
+        // ===== UTILITY TAP DANCES =====
+        
+        // GUI with Print Screen
+        td_gui_prnscrn: td_gui_prnscrn {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_GUI_PRNSCRN";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI>, <&kp PRINTSCREEN>;
+            tapping-term-ms = <200>;
+        };
+
+        // Backspace with Delete
+        td_bs_del: td_bs_del {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BS_DEL";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            tapping-term-ms = <200>;
+        };
+
+        // Space with punctuation macros
         td_space_macro: td_space_macro {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SPACE_MACRO";
@@ -114,48 +109,89 @@
             bindings = <&kp SPACE>, <&macro_comma_space>, <&macro_dot_space>;
             tapping-term-ms = <200>;
         };
-    };
 
+        // ===== MACROS =====
+        
+        // Comma + Space
+        macro_comma_space: macro_comma_space {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_COMMA_SPACE";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA &kp SPACE>;
+        };
+
+        // Dot + Space
+        macro_dot_space: macro_dot_space {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_DOT_SPACE";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp SPACE>;    };
+    };
+    // ===== KEYMAP =====
     keymap {
-        compatible = "zmk,keymap";        default_layer {
+        compatible = "zmk,keymap";
+
+        default_layer {
             label = "QWRT";
             bindings = <
-&ht_main NUM 0     &kp Q         &kp W         &kp E         &kp R         &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &mt EQUAL MINUS
-&kp TAB           &kp A           &kp S           &kp D           &kp F           &kp G           &kp H           &kp J           &kp K           &kp L           &kp SEMI        &mt GRAVE SQT
-&kp LEFT_SHIFT    &kp Z           &kp X           &kp C           &kp V           &kp B           &kp N           &kp M           &kp COMMA       &kp DOT         &kp SLASH       &td_gui_prnscrn
-&td_ctrl_sym      &kp LALT        &kp LEFT_BRACKET &td_space_macro     &kp RIGHT_BRACKET                &kp RET         &kp SPACE                                       &td_bs_del
-
-&kp DOWN &kp LEFT &kp RIGHT &kp UP
+            // ESC/SLEEP | Q | W | E | R | T        |        | Y | U | I | O | P | =/- 
+               &ht_main NUM 0  &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I  &kp O  &kp P  &mt EQUAL MINUS
+            // TAB       | A | S | D | F | G        |        | H | J | K | L | ; | '/"
+               &kp TAB         &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K  &kp L  &kp SEMI  &mt GRAVE SQT
+            // SHIFT     | Z | X | C | V | B        |        | N | M | , | . | / | GUI/PRNT
+               &kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &td_gui_prnscrn
+            // CTRL/SYM  | ALT | [ | SPACE_MACRO | ]   |   | ENTER | SPACE |   | BS/DEL
+               &td_ctrl_sym    &kp LALT  &kp LEFT_BRACKET  &td_space_macro  &kp RIGHT_BRACKET    &kp RET  &kp SPACE    &td_bs_del
+            // DOWN | LEFT | RIGHT | UP
+               &kp DOWN  &kp LEFT  &kp RIGHT  &kp UP
             >;
-        };        symbol_layer {
+        };
+
+        symbol_layer {
             label = "SYM";
             bindings = <
-&ht_main NUM 0     &none         &none         &none        &none        &none        &none       &none        &none        &none        &none         &none
-&kp TAB           &bt BT_SEL 0           &bt BT_SEL 1           &bt BT_SEL 2           &bt BT_SEL 3          &none          &none           &none           &none          &none           &none       &none
-&kp LEFT_SHIFT    &none           &none          &none          &none          &none           &none         &none           &none      &none         &none       &td_gui_prnscrn
-&td_ctrl_sym     &kp LALT        &bt BT_PRV &bt BT_CLR      &bt BT_NXT                &none        &none                                         &none
-
-&none &none &none &none
+            // ESC/SLEEP | - | - | - | - | -        |        | - | - | - | - | - | -
+               &ht_main NUM 0  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+            // TAB       | BT0 | BT1 | BT2 | BT3 | -      |        | - | - | - | - | - | -
+               &kp TAB         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none    &none  &none  &none  &none  &none  &none
+            // SHIFT     | - | - | - | - | -        |        | - | - | - | - | - | GUI/PRNT
+               &kp LEFT_SHIFT  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &td_gui_prnscrn
+            // CTRL/SYM  | ALT | BT_PRV | BT_CLR | BT_NXT  |  | - | - |   | -
+               &td_ctrl_sym    &kp LALT  &bt BT_PRV  &bt BT_CLR  &bt BT_NXT    &none  &none    &none
+            // - | - | - | -
+               &none  &none  &none  &none
             >;
-        };        function_layer {
+        };
+
+        function_layer {
             label = "NUM";
             bindings = <
-&ht_main NUM 0     &kp NUMBER_1        &kp NUMBER_2           &kp NUMBER_3           &kp NUMBER_4           &kp NUMBER_5           &kp NUMBER_6           &kp NUMBER_7           &kp NUMBER_8        &kp NUMBER_9         &kp NUMBER_0         &none
-&kp TAB           &none            &kp F1             &kp F2            &kp F3             &kp F4             &kp F5          &kp F6           &kp F7           &kp F8           &none     &none
-&kp LEFT_SHIFT    &none             &kp F9             &kp F10             &kp F11             &kp F12             &kp F13          &kp F14           &kp F15      &kp F16         &none       &td_gui_prnscrn
-&kp LEFT_CONTROL      &kp LALT        &none   &none       &none                  &kp C_MUTE          &kp C_PP                                       &td_bs_del
-
-&kp C_VOL_DN &kp C_PREV &kp C_NEXT &kp C_VOL_UP
+            // ESC/SLEEP | 1 | 2 | 3 | 4 | 5        |        | 6 | 7 | 8 | 9 | 0 | -
+               &ht_main NUM 0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
+            // TAB       | - | F1 | F2 | F3 | F4      |        | F5 | F6 | F7 | F8 | - | -
+               &kp TAB         &none  &kp F1  &kp F2  &kp F3  &kp F4        &kp F5  &kp F6  &kp F7  &kp F8  &none  &none
+            // SHIFT     | - | F9 | F10 | F11 | F12    |        | F13 | F14 | F15 | F16 | - | GUI/PRNT
+               &kp LEFT_SHIFT  &none  &kp F9  &kp F10  &kp F11  &kp F12      &kp F13  &kp F14  &kp F15  &kp F16  &none  &td_gui_prnscrn
+            // CTRL      | ALT | - | - | -      |      | MUTE | PLAY/PAUSE |   | BS/DEL
+               &kp LEFT_CONTROL  &kp LALT  &none  &none  &none    &kp C_MUTE  &kp C_PP    &td_bs_del
+            // VOL_DOWN | PREV | NEXT | VOL_UP
+               &kp C_VOL_DN  &kp C_PREV  &kp C_NEXT  &kp C_VOL_UP
             >;
-        };        lock_layer {
+        };
+
+        sleep_layer {
             label = "LOCK";
             bindings = <
-&td_triple_unlock &none        &none           &none           &none           &none           &none           &none           &none        &none         &none         &none
-&none           &none             &none             &none            &none             &none             &none          &none           &none           &none           &none     &none
-&none    &none             &none             &none             &none             &none             &none          &none           &none      &none         &none       &none
-&none      &none        &none   &none       &none                  &none          &none                                         &none
-
-&none &none &none &none
+            // TRIPLE_UNLOCK | - | - | - | - | -     |        | - | - | - | - | - | -
+               &td_triple_unlock  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+            // -             | - | - | - | - | -     |        | - | - | - | - | - | -
+               &none             &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+            // -             | - | - | - | - | -     |        | - | - | - | - | - | -
+               &none             &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+            // -             | - | - | - | -   |     | - | - |   | -
+               &none             &none  &none  &none  &none    &none  &none    &none
+            // - | - | - | -
+               &none  &none  &none  &none
             >;
         };
     };
