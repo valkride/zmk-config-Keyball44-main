@@ -26,7 +26,8 @@
 
 &caps_word { continue-list = <UNDERSCORE MINUS>; };
 
-     behaviors {    behaviors {
+/ { 
+    behaviors {
         // Tap Dance for NUM layer - short hold = momentary, long hold = toggle
         td_num_mo_tog: td_num_mo_tog {
             compatible = "zmk,behavior-tap-dance";
