@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: keyball44}
 layers:
   QWRT:
-  - '&td_esc_lock_num'
+  - {t: '&td_esc_lock', h: '&td_num_mo_tog'}
   - Q
   - W
   - E
@@ -50,7 +50,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - $$mdi:arrow-up-bold$$
   SYM:
-  - '&td_esc_lock_num'
+  - {t: '&td_esc_lock', h: '&td_num_mo_tog'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -99,7 +99,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   NUM:
-  - '&td_esc_lock_num'
+  - {t: '&td_esc_lock', h: '&td_num_mo_tog'}
   - '1'
   - '2'
   - '3'
