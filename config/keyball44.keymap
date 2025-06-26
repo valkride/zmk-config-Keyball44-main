@@ -175,7 +175,7 @@
             // SHIFT     | - | F9 | F10 | F11 | F12    |        | F13 | F14 | F15 | F16 | - | GUI/PRNT
                &kp LEFT_SHIFT  &none  &kp F9  &kp F10  &kp F11  &kp F12      &kp F13  &kp F14  &kp F15  &kp F16  &none  &td_gui_prnscrn
             // CTRL      | ALT | - | - | -      |      | MUTE | PLAY/PAUSE |   | BS/DEL
-               &kp LEFT_CONTROL  &kp LALT  &none  &none  &none    &kp C_MUTE  &kp C_PP    &td_bs_del
+               &kp LEFT_CONTROL  &kp LALT  &none  &kp C_MUTE  &none    &kp RET  &kp C_PP    &td_bs_del
             // VOL_DOWN | PREV | NEXT | VOL_UP
                &kp C_VOL_DN  &kp C_PREV  &kp C_NEXT  &kp C_VOL_UP
             >;
