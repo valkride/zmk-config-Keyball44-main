@@ -5,6 +5,8 @@
  */
  
 #include "keyball44.dtsi"
+#include <dt-bindings/zmk/pointing.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &default_transform {
     col-offset = <6>;
@@ -62,5 +64,19 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        
+        // Configure speed-responsive scrolling with acceleration
+        input-processors = <&trackball_scaler>;
+    };
+    
+    // Speed-based scroll scaling - the faster you move, the more it scrolls
+    trackball_scaler: trackball_scaler {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+        scale-multiplier = <3>;     // Base scroll speed multiplier
+        scale-divisor = <1>;
+        track-remainders;
     };
 };
