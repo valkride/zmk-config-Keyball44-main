@@ -111,13 +111,12 @@
             #binding-cells = <0>;
             bindings = <&kp COMMA &kp SPACE>;
         };
-        
-        // Dot + Space
+          // Dot + Space + Sticky Shift for next character
         macro_dot_space: macro_dot_space {
             compatible = "zmk,behavior-macro";
             label = "MACRO_DOT_SPACE";
             #binding-cells = <0>;
-            bindings = <&kp DOT &kp SPACE>;
+            bindings = <&kp DOT &kp SPACE &sk LEFT_SHIFT>;
         };
         
         // Unlock from sleep and return to default layer
