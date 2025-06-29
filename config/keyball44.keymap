@@ -70,7 +70,7 @@
             label = "TD_CTRL_SYM";
             #binding-cells = <0>;
             bindings = <&kp LEFT_CONTROL>, <&tog SYM>;
-            tapping-term-ms = <500>;
+            tapping-term-ms = <200>;
         };
 
         // Unlock from sleep and return to default layer
