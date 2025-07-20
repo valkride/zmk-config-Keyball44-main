@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: keyball44}
 layers:
   QWRT:
-  - {t: '&td_esc_sleep', h: '&timed_num 2'}
+  - {t: '&td_esc_sleep', h: NUM}
   - Q
   - W
   - E
@@ -50,7 +50,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - $$mdi:arrow-up-bold$$
   SYM:
-  - {t: '&td_esc_sleep', h: '&timed_num 2'}
+  - {t: '&td_esc_sleep', h: NUM}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -99,7 +99,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   NUM:
-  - {t: '&td_esc_sleep', h: '&timed_num 2'}
+  - {t: '&td_esc_sleep', h: NUM}
   - '1'
   - '2'
   - '3'
