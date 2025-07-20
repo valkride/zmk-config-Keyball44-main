@@ -33,7 +33,7 @@
     behaviors {
     // ===== PRIMARY BEHAVIORS =====
         
-        // Main key behavior: Tap for ESC/SLEEP, Hold for momentary NUM
+        // Main key behavior: Tap for ESC/SLEEP, Hold activates NUM with timer
         ht_main: ht_main {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_MAIN";
@@ -41,8 +41,16 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&mo>, <&td_esc_sleep>;
+            bindings = <&activate_timed_num>, <&td_esc_sleep>;
         }; 
+
+        // Activates timed NUM layer when held
+        activate_timed_num: activate_timed_num {
+            compatible = "zmk,behavior-macro-one-param";
+            label = "ACTIVATE_TIMED_NUM";
+            #binding-cells = <1>;
+            bindings = <&timed_num>;
+        };
 
         // ESC with double-tap for LOCK layer
         td_esc_sleep: td_esc_sleep {
@@ -610,7 +618,7 @@
         function_layer {
             label = "NUM";
             bindings = <
-               &ht_main NUM 0  &num_1_timer  &num_2_timer  &num_3_timer  &num_4_timer  &num_5_timer    &num_6_timer  &num_7_timer  &num_8_timer  &num_9_timer  &num_0_timer  &smart_mt_equal_minus
+               &ht_main NUM 0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &smart_mt_equal_minus
                &smart_shift  &smart_a  &smart_s  &smart_d  &smart_f  &smart_g        &smart_h  &smart_j  &smart_k  &smart_l  &smart_semi  &smart_mt_grave_sqt
                &smart_td_ctrl_sym    &smart_z  &smart_x  &smart_c  &smart_v  &smart_b        &smart_n  &smart_m  &smart_comma  &smart_dot  &smart_slash  &smart_td_gui_prnscrn
                &smart_tab         &smart_alt  &smart_left_bracket  &smart_td_space_macro  &smart_right_bracket    &smart_ret  &smart_space    &smart_td_bs_del
