@@ -64,12 +64,12 @@
 
         // Timed NUM layer - auto-deactivates after timeout
         timed_num: timed_num {
-            compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro-one-param";
             label = "TIMED_NUM";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             wait-ms = <0>;
             tap-ms = <0>;
-            bindings = <&to NUM>, <&macro_wait_time 8000>, <&to DEFAULT>; // 8 second timeout
+            bindings = <&macro_param_1to1>, <&to MACRO_PLACEHOLDER>, <&macro_wait_time 8000>, <&to DEFAULT>; // 8 second timeout
         };
 
     // ===== LAYER TOGGLES =====
@@ -156,7 +156,7 @@
         default_layer {
             label = "QWRT";
             bindings = <
-               &ht_main 0 0  &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I  &kp O  &kp P  &mt EQUAL MINUS
+               &ht_main NUM 0  &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I  &kp O  &kp P  &mt EQUAL MINUS
                &kp TAB         &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K  &kp L  &kp SEMI  &mt GRAVE SQT
                &kp LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &td_gui_prnscrn
                &td_ctrl_sym    &kp LALT  &kp LEFT_BRACKET  &td_space_macro  &kp RIGHT_BRACKET    &kp RET  &kp SPACE    &td_bs_del
@@ -168,7 +168,7 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-               &ht_main 0 0  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+               &ht_main NUM 0  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
                &kp TAB         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none    &none  &none  &none  &none  &none  &none
                &kp LEFT_SHIFT  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &td_gui_prnscrn
                &td_ctrl_sym    &kp LALT  &bt BT_PRV  &bt BT_CLR  &bt BT_NXT    &none  &none    &none
@@ -180,7 +180,7 @@
         function_layer {
             label = "NUM";
             bindings = <
-               &ht_main 0 0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
+               &ht_main NUM 0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
                &kp TAB         &none  &kp F1  &kp F2  &kp F3  &kp F4        &kp F5  &kp F6  &kp F7  &kp F8  &none  &none
                &kp LEFT_SHIFT  &none  &kp F9  &kp F10  &kp F11  &kp F12      &kp F13  &kp F14  &kp F15  &kp F16  &none  &td_gui_prnscrn
                &kp LEFT_CONTROL  &kp LALT  &none  &kp C_MUTE  &none    &kp RET  &kp C_PP    &td_bs_del
