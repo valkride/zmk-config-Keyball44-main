@@ -33,7 +33,10 @@
     behaviors {
     // ===== PRIMARY BEHAVIORS =====
         
-        // Main key behavior: Tap for ESC, Hold for 10-sec NUM, Double-tap in td_esc_sleep for LOCK
+        // Main ESC key behavior:
+        // - Single press = ESC
+        // - Hold = NUM layer for 10 seconds
+        // - Double tap = LOCK layer
         ht_main: ht_main {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_MAIN";
@@ -41,21 +44,21 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&timed_num_hold>, <&td_esc_sleep>;
+            bindings = <&activate_num_10sec>, <&td_esc_lock>;
         }; 
 
-        // Direct timed NUM activation on hold
-        timed_num_hold: timed_num_hold {
+        // Activates NUM layer for exactly 10 seconds
+        activate_num_10sec: activate_num_10sec {
             compatible = "zmk,behavior-macro-one-param";
-            label = "TIMED_NUM_HOLD";
+            label = "ACTIVATE_NUM_10SEC";
             #binding-cells = <1>;
             bindings = <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
         };
 
-        // ESC with double-tap for LOCK layer
-        td_esc_sleep: td_esc_sleep {
+        // Single tap = ESC, Double tap = LOCK
+        td_esc_lock: td_esc_lock {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_ESC_SLEEP";
+            label = "TD_ESC_LOCK";
             #binding-cells = <0>;
             bindings = <&kp ESC>, <&to LOCK>;
             tapping-term-ms = <200>;
