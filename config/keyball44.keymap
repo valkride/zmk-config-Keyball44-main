@@ -33,7 +33,7 @@
     behaviors {
     // ===== PRIMARY BEHAVIORS =====
         
-        // Main key behavior: Tap for ESC/SLEEP, Hold for timed NUM toggle
+        // Main key behavior: Tap for ESC/SLEEP, Hold for NUM layer access
         ht_main: ht_main {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_MAIN";
@@ -41,17 +41,15 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&hold_for_timed_num>, <&td_esc_sleep>;
+            bindings = <&simple_timed_num>, <&td_esc_sleep>;
         }; 
 
-        // Hold behavior that triggers timed NUM
-        hold_for_timed_num: hold_for_timed_num {
+        // Simple wrapper for timed NUM that takes a parameter
+        simple_timed_num: simple_timed_num {
             compatible = "zmk,behavior-macro-one-param";
-            label = "HOLD_FOR_TIMED_NUM";
+            label = "SIMPLE_TIMED_NUM";
             #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&timed_num>;
+            bindings = <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
         };
 
         // ESC with double-tap for LOCK layer
@@ -63,12 +61,12 @@
             tapping-term-ms = <200>;
         };
 
-        // Triple-tap to unlock from sleep/travel mode
-        td_triple_unlock: td_triple_unlock {
+        // Double-tap to unlock from sleep/travel mode
+        td_double_unlock: td_double_unlock {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_TRIPLE_UNLOCK";
+            label = "TD_DOUBLE_UNLOCK";
             #binding-cells = <0>;
-            bindings = <&none>, <&none>, <&macro_unlock_to_default>;
+            bindings = <&none>, <&macro_unlock_to_default>;
             tapping-term-ms = <400>;
         };
 
@@ -547,7 +545,7 @@
         };        sleep_layer {
             label = "LOCK";
             bindings = <
-               &td_triple_unlock  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+               &td_double_unlock  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
                &none             &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
                &none             &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
                &none             &none  &none  &none  &none    &none  &none    &none
