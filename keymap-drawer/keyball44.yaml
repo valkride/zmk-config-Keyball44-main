@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: keyball44}
 layers:
   QWRT:
-  - {t: '&td_esc_sleep', h: '&simple_timed_num 2'}
+  - {t: '&td_esc_sleep', h: NUM}
   - Q
   - W
   - E
@@ -50,7 +50,7 @@ layers:
   - $$mdi:arrow-right-bold$$
   - $$mdi:arrow-up-bold$$
   SYM:
-  - {t: '&td_esc_sleep', h: '&simple_timed_num 2'}
+  - {t: '&td_esc_sleep', h: NUM}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -99,17 +99,17 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   NUM:
-  - {t: '&td_esc_sleep', h: '&simple_timed_num 2'}
-  - '1'
-  - '2'
-  - '3'
-  - '4'
-  - '5'
-  - '6'
-  - '7'
-  - '8'
-  - '9'
-  - '0'
+  - {t: '&td_esc_sleep', h: NUM, type: held}
+  - '&num_1_timer'
+  - '&num_2_timer'
+  - '&num_3_timer'
+  - '&num_4_timer'
+  - '&num_5_timer'
+  - '&num_6_timer'
+  - '&num_7_timer'
+  - '&num_8_timer'
+  - '&num_9_timer'
+  - '&num_0_timer'
   - '&smart_mt_equal_minus'
   - '&smart_shift'
   - '&smart_a'
