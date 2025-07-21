@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: valkride
       url-base: https://github.com/valkride
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: valkride
@@ -12,6 +14,9 @@ manifest:
       revision: main
     - name: zmk-nice-oled
       remote: valkride
+      revision: main
+    - name: zmk-auto-layer
+      remote: urob
       revision: main
   self:
     path: config
