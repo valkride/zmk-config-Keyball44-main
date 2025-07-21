@@ -29,11 +29,6 @@
     continue-list = <UNDERSCORE MINUS>; 
 };
 
-// Configure num_word behavior for number keys and operators
-&num_word {
-    continue-list = <NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0 BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-};
-
 / {
     behaviors {
     // ===== PRIMARY BEHAVIORS =====
