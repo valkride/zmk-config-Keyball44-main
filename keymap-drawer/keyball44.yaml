@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: keyball44}
 layers:
   QWRT:
-  - {t: '&td_esc_lock', h: '&auto_num_layer 2'}
+  - {t: '&td_esc_lock', h: NUM}
   - Q
   - W
   - E
@@ -44,13 +44,13 @@ layers:
   - {t: ']', s: '}'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:keyboard-space$$
-  - '&td_bs_del'
+  - {t: '$$mdi:backspace$$', h: '$$mdi:backspace-reverse-outline$$'}
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-right-bold$$
   - $$mdi:arrow-up-bold$$
   SYM:
-  - {t: '&td_esc_lock', h: '&auto_num_layer 2'}
+  - {t: '&td_esc_lock', h: NUM}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -99,7 +99,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   NUM:
-  - {t: '&td_esc_lock', h: '&auto_num_layer 2'}
+  - {t: '&td_esc_lock', h: NUM, type: held}
   - '1'
   - '2'
   - '3'
@@ -110,43 +110,43 @@ layers:
   - '8'
   - '9'
   - '0'
-  - '&smart_mt_equal_minus'
-  - '&smart_shift'
-  - '&smart_a'
-  - '&smart_s'
-  - '&smart_d'
-  - '&smart_f'
-  - '&smart_g'
-  - '&smart_h'
-  - '&smart_j'
-  - '&smart_k'
-  - '&smart_l'
-  - '&smart_semi'
-  - '&smart_mt_grave_sqt'
-  - '&smart_td_ctrl_sym'
-  - '&smart_z'
-  - '&smart_x'
-  - '&smart_c'
-  - '&smart_v'
-  - '&smart_b'
-  - '&smart_n'
-  - '&smart_m'
-  - '&smart_comma'
-  - '&smart_dot'
-  - '&smart_slash'
-  - '&smart_td_gui_prnscrn'
-  - '&smart_tab'
-  - '&smart_alt'
-  - '&smart_left_bracket'
-  - '&smart_td_space_macro'
-  - '&smart_right_bracket'
-  - '&smart_ret'
-  - '&smart_space'
-  - '&smart_td_bs_del'
-  - '&smart_down'
-  - '&smart_left'
-  - '&smart_right'
-  - '&smart_up'
+  - {t: '-', h: '=', s: _}
+  - $$mdi:apple-keyboard-shift$$
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - {t: ;, s: ':'}
+  - {t: '''', h: '`', s: '"'}
+  - '&td_ctrl_sym'
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
+  - '&td_gui_prnscrn'
+  - $$mdi:keyboard-tab$$
+  - $$mdi:apple-keyboard-option$$
+  - {t: '[', s: '{'}
+  - '&td_space_macro'
+  - {t: ']', s: '}'}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:backspace$$', h: '$$mdi:backspace-reverse-outline$$'}
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-right-bold$$
+  - $$mdi:arrow-up-bold$$
   LOCK:
   - '&td_double_unlock'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
