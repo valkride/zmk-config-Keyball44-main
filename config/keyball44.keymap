@@ -41,7 +41,7 @@
         
         // Main ESC key behavior with auto-layer:
         // - Single press = ESC
-        // - Hold = NUM layer with auto-timeout (continues on numbers)
+        // - Hold = NUM layer (smart deactivation + 10s timeout)
         // - Double tap = LOCK layer
         ht_main: ht_main {
             compatible = "zmk,behavior-hold-tap";
@@ -50,7 +50,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&auto_num_layer>, <&td_esc_lock>;
+            bindings = <&num_timeout>, <&td_esc_lock>;
         }; 
 
         // Single tap = ESC, Double tap = LOCK
@@ -62,12 +62,22 @@
             tapping-term-ms = <200>;
         };
 
-        // Custom auto-layer with 10-second timeout for NUM layer
+        // NUM layer with 10-second timeout and smart deactivation
         auto_num_layer: auto_num_layer {
             compatible = "zmk,behavior-auto-layer";
             label = "AUTO_NUM_LAYER";
             #binding-cells = <1>;
             continue-list = <NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0 BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+            ignore-modifiers;
+        };
+
+        // Alternative: NUM layer with timeout only
+        num_timeout: num_timeout {
+            compatible = "zmk,behavior-sticky-key";
+            label = "NUM_TIMEOUT";
+            #binding-cells = <1>;
+            release-after-ms = <10000>;  // 10 seconds timeout
+            bindings = <&mo>;
             ignore-modifiers;
         };
 
@@ -110,13 +120,15 @@
             tapping-term-ms = <200>;
         };
 
-        // Backspace with Delete
+        // Backspace with Delete (hold for delete)
         td_bs_del: td_bs_del {
-            compatible = "zmk,behavior-tap-dance";
+            compatible = "zmk,behavior-hold-tap";
             label = "TD_BS_DEL";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&kp>;
         };
 
         // Space with punctuation macros
@@ -156,346 +168,6 @@
             bindings = <&kp DOT &kp SPACE &sk_short LEFT_SHIFT>;
         }; 
 
-    // ===== SMART KEYS =====
-
-        // Smart keys that exit NUM layer when pressed (for non-top-row keys)
-        smart_q: smart_q {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_Q";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp Q>;
-        };
-
-        smart_w: smart_w {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_W";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp W>;
-        };
-
-        smart_e: smart_e {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_E";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp E>;
-        };
-
-        smart_r: smart_r {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_R";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp R>;
-        };
-
-        smart_t: smart_t {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_T";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp T>;
-        };
-
-        smart_y: smart_y {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_Y";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp Y>;
-        };
-
-        smart_u: smart_u {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_U";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp U>;
-        };
-
-        smart_i: smart_i {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_I";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp I>;
-        };
-
-        smart_o: smart_o {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_O";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp O>;
-        };
-
-        smart_p: smart_p {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_P";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp P>;
-        };
-
-        smart_a: smart_a {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_A";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp A>;
-        };
-
-        smart_s: smart_s {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_S";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp S>;
-        };
-
-        smart_d: smart_d {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_D";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp D>;
-        };
-
-        smart_f: smart_f {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_F";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp F>;
-        };
-
-        smart_g: smart_g {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_G";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp G>;
-        };
-
-        smart_h: smart_h {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_H";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp H>;
-        };
-
-        smart_j: smart_j {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_J";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp J>;
-        };
-
-        smart_k: smart_k {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_K";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp K>;
-        };
-
-        smart_l: smart_l {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_L";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp L>;
-        };
-
-        smart_z: smart_z {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_Z";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp Z>;
-        };
-
-        smart_x: smart_x {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_X";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp X>;
-        };
-
-        smart_c: smart_c {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_C";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp C>;
-        };
-
-        smart_v: smart_v {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_V";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp V>;
-        };
-
-        smart_b: smart_b {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_B";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp B>;
-        };
-
-        smart_n: smart_n {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_N";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp N>;
-        };
-
-        smart_m: smart_m {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_M";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp M>;
-        };
-
-        smart_ret: smart_ret {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_RET";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp RET>;
-        };
-
-        smart_space: smart_space {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_SPACE";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp SPACE>;
-        };
-
-        smart_tab: smart_tab {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_TAB";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp TAB>;
-        };
-
-        smart_shift: smart_shift {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_SHIFT";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp LEFT_SHIFT>;
-        };
-
-        smart_ctrl: smart_ctrl {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_CTRL";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp LEFT_CONTROL>;
-        };
-
-        smart_alt: smart_alt {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_ALT";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp LALT>;
-        };
-
-        smart_comma: smart_comma {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_COMMA";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp COMMA>;
-        };
-
-        smart_dot: smart_dot {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_DOT";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp DOT>;
-        };
-
-        smart_slash: smart_slash {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_SLASH";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp SLASH>;
-        };
-
-        smart_semi: smart_semi {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_SEMI";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp SEMI>;
-        };
-
-        smart_left_bracket: smart_left_bracket {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_LEFT_BRACKET";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp LEFT_BRACKET>;
-        };
-
-        smart_right_bracket: smart_right_bracket {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_RIGHT_BRACKET";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp RIGHT_BRACKET>;
-        };
-
-        smart_down: smart_down {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_DOWN";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp DOWN>;
-        };
-
-        smart_left: smart_left {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_LEFT";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp LEFT>;
-        };
-
-        smart_right: smart_right {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_RIGHT";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp RIGHT>;
-        };
-
-        smart_up: smart_up {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_UP";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT &kp UP>;
-        };
-
-        // Smart behaviors for complex behaviors
-        smart_td_ctrl_sym: smart_td_ctrl_sym {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_TD_CTRL_SYM";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT>, <&td_ctrl_sym>;
-        };
-
-        smart_td_gui_prnscrn: smart_td_gui_prnscrn {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_TD_GUI_PRNSCRN";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT>, <&td_gui_prnscrn>;
-        };
-
-        smart_td_bs_del: smart_td_bs_del {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_TD_BS_DEL";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT>, <&td_bs_del>;
-        };
-
-        smart_td_space_macro: smart_td_space_macro {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_TD_SPACE_MACRO";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT>, <&td_space_macro>;
-        };
-
-        smart_mt_equal_minus: smart_mt_equal_minus {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_MT_EQUAL_MINUS";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT>, <&mt EQUAL MINUS>;
-        };
-
-        smart_mt_grave_sqt: smart_mt_grave_sqt {
-            compatible = "zmk,behavior-macro";
-            label = "SMART_MT_GRAVE_SQT";
-            #binding-cells = <0>;
-            bindings = <&to DEFAULT>, <&mt GRAVE SQT>;
-        };
-
     };
     // ===== KEYMAP =====
     keymap {
@@ -507,7 +179,7 @@
                &ht_main NUM 0  &kp Q  &kp W  &kp E  &kp R  &kp T        &kp Y  &kp U  &kp I  &kp O  &kp P  &mt EQUAL MINUS
                &kp LEFT_SHIFT  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K  &kp L  &kp SEMI  &mt GRAVE SQT
                &td_ctrl_sym    &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &td_gui_prnscrn
-               &kp TAB         &kp LALT  &kp LEFT_BRACKET  &td_space_macro  &kp RIGHT_BRACKET    &kp RET  &kp SPACE    &td_bs_del
+               &kp TAB         &kp LALT  &kp LEFT_BRACKET  &td_space_macro  &kp RIGHT_BRACKET    &kp RET  &kp SPACE    &td_bs_del DELETE BACKSPACE
 
                &kp DOWN  &kp LEFT  &kp RIGHT  &kp UP
             >;
@@ -528,14 +200,16 @@
         function_layer {
             label = "NUM";
             bindings = <
-               &ht_main NUM 0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &smart_mt_equal_minus
-               &smart_shift  &smart_a  &smart_s  &smart_d  &smart_f  &smart_g        &smart_h  &smart_j  &smart_k  &smart_l  &smart_semi  &smart_mt_grave_sqt
-               &smart_td_ctrl_sym    &smart_z  &smart_x  &smart_c  &smart_v  &smart_b        &smart_n  &smart_m  &smart_comma  &smart_dot  &smart_slash  &smart_td_gui_prnscrn
-               &smart_tab         &smart_alt  &smart_left_bracket  &smart_td_space_macro  &smart_right_bracket    &smart_ret  &smart_space    &smart_td_bs_del
+               &ht_main NUM 0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &mt EQUAL MINUS
+               &kp LEFT_SHIFT  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K  &kp L  &kp SEMI  &mt GRAVE SQT
+               &td_ctrl_sym    &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &td_gui_prnscrn
+               &kp TAB         &kp LALT  &kp LEFT_BRACKET  &td_space_macro  &kp RIGHT_BRACKET    &kp RET  &kp SPACE    &td_bs_del DELETE BACKSPACE
 
-               &smart_down  &smart_left  &smart_right  &smart_up
+               &kp DOWN  &kp LEFT  &kp RIGHT  &kp UP
             >;
-        };        sleep_layer {
+        };
+        
+        sleep_layer {
             label = "LOCK";
             bindings = <
                &td_double_unlock  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
