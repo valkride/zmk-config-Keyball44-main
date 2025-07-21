@@ -48,7 +48,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&sl>, <&td_esc_lock>;
+            bindings = <&tog>, <&td_esc_lock>;
         }; 
 
         // Single tap = ESC, Double tap = LOCK
@@ -60,6 +60,14 @@
             tapping-term-ms = <200>;
         };
 
+        // Auto-off timer for NUM layer
+        num_auto_off: num_auto_off {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_AUTO_OFF";
+            #binding-cells = <0>;
+            bindings = <&macro_wait_time 10000>, <&tog NUM>;
+        };
+
         // Double-tap to unlock from sleep/travel mode
         td_double_unlock: td_double_unlock {
             compatible = "zmk,behavior-tap-dance";
@@ -67,6 +75,77 @@
             #binding-cells = <0>;
             bindings = <&none>, <&macro_unlock_to_default>;
             tapping-term-ms = <400>;
+        };
+
+        // Numbers that reset the 10-second timer
+        num_1_reset: num_1_reset {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_1_RESET";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_1>, <&num_auto_off>;
+        };
+
+        num_2_reset: num_2_reset {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_2_RESET";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_2>, <&num_auto_off>;
+        };
+
+        num_3_reset: num_3_reset {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_3_RESET";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_3>, <&num_auto_off>;
+        };
+
+        num_4_reset: num_4_reset {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_4_RESET";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_4>, <&num_auto_off>;
+        };
+
+        num_5_reset: num_5_reset {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_5_RESET";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_5>, <&num_auto_off>;
+        };
+
+        num_6_reset: num_6_reset {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_6_RESET";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_6>, <&num_auto_off>;
+        };
+
+        num_7_reset: num_7_reset {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_7_RESET";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_7>, <&num_auto_off>;
+        };
+
+        num_8_reset: num_8_reset {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_8_RESET";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_8>, <&num_auto_off>;
+        };
+
+        num_9_reset: num_9_reset {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_9_RESET";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_9>, <&num_auto_off>;
+        };
+
+        num_0_reset: num_0_reset {
+            compatible = "zmk,behavior-macro";
+            label = "NUM_0_RESET";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_0>, <&num_auto_off>;
         };
 
     // ===== LAYER TOGGLES =====
@@ -144,6 +223,8 @@
             #binding-cells = <0>;
             bindings = <&kp DOT &kp SPACE &sk_short LEFT_SHIFT>;
         }; 
+
+    // ===== SMART KEYS =====
 
         // Smart keys that exit NUM layer when pressed (for non-top-row keys)
         smart_q: smart_q {
