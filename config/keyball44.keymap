@@ -25,6 +25,10 @@
     quick-tap-ms = <150>;
 };
 
+&sl {
+    release-after-ms = <10000>;  // 10 seconds
+};
+
 &caps_word { 
     continue-list = <UNDERSCORE MINUS>; 
 };
@@ -35,7 +39,7 @@
         
         // Main ESC key behavior:
         // - Single press = ESC
-        // - Hold = Momentary NUM layer
+        // - Hold = Sticky NUM layer for 10 seconds
         // - Double tap = LOCK layer
         ht_main: ht_main {
             compatible = "zmk,behavior-hold-tap";
@@ -44,7 +48,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&mo>, <&td_esc_lock>;
+            bindings = <&sl>, <&td_esc_lock>;
         }; 
 
         // Single tap = ESC, Double tap = LOCK
@@ -82,77 +86,6 @@
             label = "MACRO_UNLOCK_DEFAULT";
             #binding-cells = <0>;
             bindings = <&to DEFAULT &kp ESCAPE>;
-        };
-
-        // Make NUM layer sticky for 10 seconds when any number is pressed
-        sticky_num_1: sticky_num_1 {
-            compatible = "zmk,behavior-macro";
-            label = "STICKY_NUM_1";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_1>, <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
-        };
-
-        sticky_num_2: sticky_num_2 {
-            compatible = "zmk,behavior-macro";
-            label = "STICKY_NUM_2";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_2>, <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
-        };
-
-        sticky_num_3: sticky_num_3 {
-            compatible = "zmk,behavior-macro";
-            label = "STICKY_NUM_3";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_3>, <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
-        };
-
-        sticky_num_4: sticky_num_4 {
-            compatible = "zmk,behavior-macro";
-            label = "STICKY_NUM_4";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_4>, <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
-        };
-
-        sticky_num_5: sticky_num_5 {
-            compatible = "zmk,behavior-macro";
-            label = "STICKY_NUM_5";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_5>, <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
-        };
-
-        sticky_num_6: sticky_num_6 {
-            compatible = "zmk,behavior-macro";
-            label = "STICKY_NUM_6";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_6>, <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
-        };
-
-        sticky_num_7: sticky_num_7 {
-            compatible = "zmk,behavior-macro";
-            label = "STICKY_NUM_7";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_7>, <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
-        };
-
-        sticky_num_8: sticky_num_8 {
-            compatible = "zmk,behavior-macro";
-            label = "STICKY_NUM_8";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_8>, <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
-        };
-
-        sticky_num_9: sticky_num_9 {
-            compatible = "zmk,behavior-macro";
-            label = "STICKY_NUM_9";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_9>, <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
-        };
-
-        sticky_num_0: sticky_num_0 {
-            compatible = "zmk,behavior-macro";
-            label = "STICKY_NUM_0";
-            #binding-cells = <0>;
-            bindings = <&kp NUMBER_0>, <&to NUM>, <&macro_wait_time 10000>, <&to DEFAULT>;
         };
 
     // ===== UTILITY TAP DANCES =====
@@ -582,7 +515,7 @@
         function_layer {
             label = "NUM";
             bindings = <
-               &ht_main NUM 0  &sticky_num_1  &sticky_num_2  &sticky_num_3  &sticky_num_4  &sticky_num_5    &sticky_num_6  &sticky_num_7  &sticky_num_8  &sticky_num_9  &sticky_num_0  &smart_mt_equal_minus
+               &ht_main NUM 0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &smart_mt_equal_minus
                &smart_shift  &smart_a  &smart_s  &smart_d  &smart_f  &smart_g        &smart_h  &smart_j  &smart_k  &smart_l  &smart_semi  &smart_mt_grave_sqt
                &smart_td_ctrl_sym    &smart_z  &smart_x  &smart_c  &smart_v  &smart_b        &smart_n  &smart_m  &smart_comma  &smart_dot  &smart_slash  &smart_td_gui_prnscrn
                &smart_tab         &smart_alt  &smart_left_bracket  &smart_td_space_macro  &smart_right_bracket    &smart_ret  &smart_space    &smart_td_bs_del
