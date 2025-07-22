@@ -45,7 +45,7 @@
 
         // Main ESC key behavior:
         // - Tap = ESC (normal function)
-        // - Hold + release = NUM layer for 10 seconds with smart deactivation
+        // - Hold + release = NUM layer with auto-timeout and timer reset on number presses
         // - Double tap = LOCK layer
         ht_main: ht_main {
             compatible = "zmk,behavior-hold-tap";
@@ -54,7 +54,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&auto_num_10s>, <&td_esc_lock>;
+            bindings = <&to>, <&td_esc_lock>;
         }; 
 
         // Single tap = ESC, Double tap = LOCK
@@ -185,7 +185,7 @@
         function_layer {
             label = "NUM";
             bindings = <
-               &ht_main NUM 0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &mt EQUAL MINUS
+               &auto_num_10s NUM  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &mt EQUAL MINUS
                &kp LEFT_SHIFT  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K  &kp L  &kp SEMI  &mt GRAVE SQT
                &td_ctrl_sym    &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &td_gui_prnscrn
                &kp TAB         &kp LALT  &kp LEFT_BRACKET  &td_space_macro  &kp RIGHT_BRACKET    &kp RET  &kp SPACE    &td_bs_del DELETE BACKSPACE
