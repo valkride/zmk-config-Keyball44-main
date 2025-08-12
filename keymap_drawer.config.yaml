@@ -16,6 +16,8 @@ draw_config:
   arc_radius: 12.0
   append_colon_to_layer_header: true
   small_pad: 4.0
+  unit_x: 120.0
+  unit_y: 112.0
   svg_extra_style: |
     /* For default sytles, see https://github.com/caksoylar/keymap-drawer/blob/main/keymap_drawer/config.py#L85 */
 
