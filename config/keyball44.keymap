@@ -38,7 +38,7 @@
             compatible = "zmk,behavior-auto-layer";
             label = "AUTO_NUM_10S";
             #binding-cells = <1>;
-            continue-list = <NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0 BSPC DEL DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
+            continue-list = <NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0  DEL DOT COMMA PLUS MINUS STAR  EQUAL DELETE BACKSPACE SPACE C_VOL_DN C_PREV C_NEXT C_VOL_UP>;
             ignore-modifiers;
             timeout-ms = <10000>;  // 10 seconds
         };
@@ -190,7 +190,7 @@
                &td_ctrl_sym    &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &td_gui_prnscrn
                &kp TAB         &kp LALT  &kp LEFT_BRACKET  &td_space_macro  &kp RIGHT_BRACKET    &kp RET  &kp SPACE    &td_bs_del DELETE BACKSPACE
 
-               &kp DOWN  &kp LEFT  &kp RIGHT  &kp UP
+               &kp C_VOL_DN  &kp C_PREV  &kp C_NEXT  &kp C_VOL_UP
             >;
         };
         
