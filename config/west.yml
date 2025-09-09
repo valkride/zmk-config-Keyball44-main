@@ -16,8 +16,9 @@ manifest:
     - name: zmk-auto-layer
       remote: valkride
       revision: main
-    - name: zmk-autocorrect-module
-      remote: valkride
-      revision: main
+    # Temporarily disable autocorrect module to test base build
+    # - name: zmk-autocorrect-module
+    #   remote: valkride
+    #   revision: main
   self:
     path: config
