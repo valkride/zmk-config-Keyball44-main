@@ -38,8 +38,7 @@
             compatible = "zmk,behavior-auto-layer";
             label = "AUTO_NUM";
             #binding-cells = <1>;
-            continue-list = <NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0  DEL DOT COMMA PLUS MINUS STAR  EQUAL DELETE BACKSPACE SPACE C_VOL_DN C_PREV C_NEXT C_VOL_UP>;
-            ignore-modifiers;
+            continue-list = <NUMBER_1 NUMBER_2 NUMBER_3 NUMBER_4 NUMBER_5 NUMBER_6 NUMBER_7 NUMBER_8 NUMBER_9 NUMBER_0 PLUS MINUS STAR EQUAL DOT COMMA>;
             timeout-ms = <5000>; // 5 seconds
         };
 
