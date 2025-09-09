@@ -53,7 +53,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            bindings = <&to NUM>, <&td_esc_lock>;
+            bindings = <&to>, <&td_esc_lock>;
         }; 
 
         // Single tap = ESC, Double tap = LOCK
