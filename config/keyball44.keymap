@@ -155,11 +155,6 @@
 
     };
     
-    // Override autocorrect to enable by default
-    &autocorrect {
-        on-by-default;
-    };
-    
     // ===== KEYMAP =====
     keymap {
         compatible = "zmk,keymap";
