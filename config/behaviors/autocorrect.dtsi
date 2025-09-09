@@ -1,0 +1,9 @@
+/ {
+    behaviors {
+        /omit-if-no-ref/ autocorrect: autocorrect {
+            compatible = "zmk,behavior-autocorrect";
+            label = "AUTOCORRECT";
+            #binding-cells = <0>;
+        };
+    };
+};
