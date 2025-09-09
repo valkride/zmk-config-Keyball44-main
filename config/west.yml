@@ -7,18 +7,18 @@ manifest:
       remote: valkride
       revision: main
       import: app/west.yml
-    - name: zmk-pmw3610-driver
-      remote: valkride
-      revision: main
-    - name: zmk-nice-oled
-      remote: valkride
-      revision: main
-    - name: zmk-auto-layer
-      remote: valkride
-      revision: main
-    # Temporarily disable autocorrect module to test base build
-    # - name: zmk-autocorrect-module
+    # Temporarily disable other modules to isolate build issue
+    # - name: zmk-pmw3610-driver
     #   remote: valkride
     #   revision: main
+    # - name: zmk-nice-oled
+    #   remote: valkride
+    #   revision: main
+    # - name: zmk-auto-layer
+    #   remote: valkride
+    #   revision: main
+    - name: zmk-autocorrect-module
+      remote: valkride
+      revision: main
   self:
     path: config
