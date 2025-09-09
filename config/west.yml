@@ -1,12 +1,10 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
     - name: valkride
       url-base: https://github.com/valkride
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: valkride
       revision: main
       import: app/west.yml
     - name: zmk-autocorrect-module
