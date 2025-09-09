@@ -2,7 +2,3 @@
 include:
   - board: nice_nano_v2
     shield: keyball44_left
-  - board: nice_nano_v2
-    shield: keyball44_right
-  - board: nice_nano_v2
-    shield: settings_reset
