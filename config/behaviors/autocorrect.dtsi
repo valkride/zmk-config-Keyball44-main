@@ -4,6 +4,7 @@
             compatible = "zmk,behavior-autocorrect";
             label = "AUTOCORRECT";
             #binding-cells = <0>;
+            on-by-default;
         };
     };
 };

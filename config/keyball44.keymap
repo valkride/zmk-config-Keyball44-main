@@ -11,6 +11,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <behaviors/autocorrect.dtsi>
 
 // Global behavior overrides
 &lt {
@@ -172,7 +173,7 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-               &ht_main NUM 0  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+               &ht_main NUM 0  &autocorrect  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
                &kp LEFT_SHIFT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none    &none  &none  &none  &none  &none  &none
                &td_ctrl_sym    &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &td_gui_prnscrn
                &kp TAB         &kp LALT  &bt BT_PRV  &bt BT_CLR  &bt BT_NXT    &none  &none    &none
