@@ -38,6 +38,7 @@
             compatible = "zmk,behavior-auto-layer";
             label = "AUTO_NUM";
             #binding-cells = <1>;
+            continue-list = <>;
             timeout-ms = <5000>; // 5 seconds when idle
         };
 
