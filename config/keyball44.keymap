@@ -33,19 +33,88 @@
     behaviors {
     // ===== PRIMARY BEHAVIORS =====
         
-        // NUM layer with 5-second timeout and smart deactivation
+        // NUM layer auto-layer behavior - stays active on number keys
         Auto_Num: Auto_Num {
             compatible = "zmk,behavior-auto-layer";
             label = "AUTO_NUM";
             #binding-cells = <1>;
-            continue-list = <BACKSPACE DELETE DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
-            ignore-numbers;
-            timeout-ms = <5000>; // 5 seconds
+            timeout-ms = <5000>; // 5 seconds when idle
+        };
+
+        // Number key macros that reset the auto-layer timer
+        macro_num0: macro_num0 {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_NUM0";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_0>, <&Auto_Num NUM>;
+        };
+
+        macro_num1: macro_num1 {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_NUM1";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_1>, <&Auto_Num NUM>;
+        };
+
+        macro_num2: macro_num2 {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_NUM2";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_2>, <&Auto_Num NUM>;
+        };
+
+        macro_num3: macro_num3 {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_NUM3";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_3>, <&Auto_Num NUM>;
+        };
+
+        macro_num4: macro_num4 {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_NUM4";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_4>, <&Auto_Num NUM>;
+        };
+
+        macro_num5: macro_num5 {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_NUM5";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_5>, <&Auto_Num NUM>;
+        };
+
+        macro_num6: macro_num6 {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_NUM6";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_6>, <&Auto_Num NUM>;
+        };
+
+        macro_num7: macro_num7 {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_NUM7";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_7>, <&Auto_Num NUM>;
+        };
+
+        macro_num8: macro_num8 {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_NUM8";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_8>, <&Auto_Num NUM>;
+        };
+
+        macro_num9: macro_num9 {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_NUM9";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_9>, <&Auto_Num NUM>;
         };
 
         // Main ESC key behavior:
-        // - Tap = ESC (normal function)
-        // - Hold + release = NUM layer with auto-timeout and timer reset on number presses
+        // - Tap = ESC (normal function)  
+        // - Hold + release = NUM layer with auto-layer behavior
         // - Double tap = LOCK layer
         ht_main: ht_main {
             compatible = "zmk,behavior-hold-tap";
@@ -186,7 +255,7 @@
         function_layer {
             label = "NUM";
             bindings = <
-               &ht_main NUM 0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &mt EQUAL MINUS
+               &ht_main NUM 0  &macro_num1  &macro_num2  &macro_num3  &macro_num4  &macro_num5    &macro_num6  &macro_num7  &macro_num8  &macro_num9  &macro_num0  &mt EQUAL MINUS
                &kp LEFT_SHIFT  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K  &kp L  &kp SEMI  &mt GRAVE SQT
                &td_ctrl_sym    &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &td_gui_prnscrn
                &kp TAB         &kp LALT  &kp LEFT_BRACKET  &td_space_macro  &kp RIGHT_BRACKET    &kp RET  &kp SPACE    &td_bs_del DELETE BACKSPACE
