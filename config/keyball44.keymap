@@ -39,7 +39,7 @@
             label = "AUTO_NUM";
             #binding-cells = <1>;
             continue-list = <PLUS MINUS STAR EQUAL COMMA DOT FSLH BSLH PIPE UNDER PERCENT HASH AT EXCL QMARK COLON SEMI LPAR RPAR LBKT RBKT LBRC RBRC LT GT AMPS CARET TILDE GRAVE DLLR BSPC DEL SPACE>;
-            ignore-numbers = <1>;
+            ignore-numbers;
             timeout-ms = <5000>; // 5 seconds
         };
 
