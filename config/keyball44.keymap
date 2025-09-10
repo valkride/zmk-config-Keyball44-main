@@ -38,7 +38,7 @@
             compatible = "zmk,behavior-auto-layer";
             label = "AUTO_NUM";
             #binding-cells = <1>;
-            continue-list = <PLUS MINUS STAR EQUAL COMMA DOT FSLH BSLH PIPE UNDER PERCENT HASH AT EXCL QMARK COLON SEMI LPAR RPAR LBKT RBKT LBRC RBRC LT GT AMPS CARET TILDE GRAVE DLLR BSPC DEL SPACE>;
+            continue-list = <BACKSPACE DELETE DOT COMMA PLUS MINUS STAR FSLH EQUAL>;
             ignore-numbers;
             timeout-ms = <5000>; // 5 seconds
         };
