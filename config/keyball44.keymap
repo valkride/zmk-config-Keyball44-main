@@ -7,6 +7,8 @@
 
 // Includes
 #include <behaviors/mouse_keys.dtsi>
+#include <behaviors/autocorrect.dtsi>
+#include <behaviors/autocorrect-en.dtsi>
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -244,7 +246,7 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-               &none  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
+               &autocorrect  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
                &kp LEFT_SHIFT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &none    &none  &none  &none  &none  &none  &none
                &td_ctrl_sym    &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &td_gui_prnscrn
                &kp TAB         &kp LALT  &bt BT_PRV  &bt BT_CLR  &bt BT_NXT    &none  &none    &none
