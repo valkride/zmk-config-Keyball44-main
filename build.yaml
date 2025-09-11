@@ -1,8 +1,8 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: keyball44_left nice_oled autocorrect_adapter
+    shield: keyball44_left nice_oled auto_correct_mod
   - board: nice_nano_v2
-    shield: keyball44_right nice_oled autocorrect_adapter
+    shield: keyball44_right nice_oled auto_correct_mod
   - board: nice_nano_v2
     shield: settings_reset
