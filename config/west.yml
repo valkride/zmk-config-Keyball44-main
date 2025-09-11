@@ -21,5 +21,6 @@ manifest:
     - name: zmk-autocorrect-module
       remote: valkride
       revision: main
+      path: zmk-autocorrect-module-main
   self:
     path: config
