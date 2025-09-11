@@ -38,77 +38,77 @@
             compatible = "zmk,behavior-auto-layer";
             label = "AUTO_NUM";
             #binding-cells = <1>;
-            continue-list = <>;
+            continue-list = <PLUS MINUS STAR EQUAL COMMA DOT FSLH BSLH PIPE UNDER PERCENT HASH AT EXCL QMARK COLON SEMI LPAR RPAR LBKT RBKT LBRC RBRC LT GT AMPS CARET TILDE GRAVE DLLR SPACE BSPC DEL>;
             timeout-ms = <5000>; // 5 seconds when idle
         };
 
         // Number key macros that reset the auto-layer timer
-        macro_num0: macro_num0 {
+        num0: num0 {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_NUM0";
+            label = "NUM0";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_0>, <&Auto_Num NUM>;
         };
 
-        macro_num1: macro_num1 {
+        num1: num1 {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_NUM1";
+            label = "NUM1";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_1>, <&Auto_Num NUM>;
         };
 
-        macro_num2: macro_num2 {
+        num2: num2 {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_NUM2";
+            label = "NUM2";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_2>, <&Auto_Num NUM>;
         };
 
-        macro_num3: macro_num3 {
+        num3: num3 {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_NUM3";
+            label = "NUM3";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_3>, <&Auto_Num NUM>;
         };
 
-        macro_num4: macro_num4 {
+        num4: num4 {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_NUM4";
+            label = "NUM4";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_4>, <&Auto_Num NUM>;
         };
 
-        macro_num5: macro_num5 {
+        num5: num5 {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_NUM5";
+            label = "NUM5";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_5>, <&Auto_Num NUM>;
         };
 
-        macro_num6: macro_num6 {
+        num6: num6 {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_NUM6";
+            label = "NUM6";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_6>, <&Auto_Num NUM>;
         };
 
-        macro_num7: macro_num7 {
+        num7: num7 {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_NUM7";
+            label = "NUM7";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_7>, <&Auto_Num NUM>;
         };
 
-        macro_num8: macro_num8 {
+        num8: num8 {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_NUM8";
+            label = "NUM8";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_8>, <&Auto_Num NUM>;
         };
 
-        macro_num9: macro_num9 {
+        num9: num9 {
             compatible = "zmk,behavior-macro";
-            label = "MACRO_NUM9";
+            label = "NUM9";
             #binding-cells = <0>;
             bindings = <&kp NUMBER_9>, <&Auto_Num NUM>;
         };
@@ -256,7 +256,7 @@
         function_layer {
             label = "NUM";
             bindings = <
-               &ht_main NUM 0  &macro_num1  &macro_num2  &macro_num3  &macro_num4  &macro_num5    &macro_num6  &macro_num7  &macro_num8  &macro_num9  &macro_num0  &mt EQUAL MINUS
+               &ht_main NUM 0  &num1  &num2  &num3  &num4  &num5    &num6  &num7  &num8  &num9  &num0  &mt EQUAL MINUS
                &kp LEFT_SHIFT  &kp A  &kp S  &kp D  &kp F  &kp G        &kp H  &kp J  &kp K  &kp L  &kp SEMI  &mt GRAVE SQT
                &td_ctrl_sym    &kp Z  &kp X  &kp C  &kp V  &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &td_gui_prnscrn
                &kp TAB         &kp LALT  &kp LEFT_BRACKET  &td_space_macro  &kp RIGHT_BRACKET    &kp RET  &kp SPACE    &td_bs_del DELETE BACKSPACE
