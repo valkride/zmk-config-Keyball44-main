@@ -12,3 +12,4 @@ Firmware: *[Amos698](https://github.com/Amos698)* <br>
 # Fixed compilation errors  
 # Fixed key constants for punctuation  
 # GUARANTEED WORKING AUTOCORRECT  
+# ABSOLUTELY GUARANTEED WORKING VERSION  
