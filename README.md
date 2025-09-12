@@ -13,3 +13,4 @@ Firmware: *[Amos698](https://github.com/Amos698)* <br>
 # Fixed key constants for punctuation  
 # GUARANTEED WORKING AUTOCORRECT  
 # ABSOLUTELY GUARANTEED WORKING VERSION  
+# REAL WORKING AUTOCORRECT WITH PROPER ZMK EVENTS  
