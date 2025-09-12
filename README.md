@@ -10,3 +10,4 @@ Firmware: *[Amos698](https://github.com/Amos698)* <br>
 # Test fixed autocorrect compilation  
 # REAL autocorrect implementation test  
 # Fixed compilation errors  
+# Fixed key constants for punctuation  
