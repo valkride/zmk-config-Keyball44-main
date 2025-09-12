@@ -1,1 +1,0 @@
-"ZMK Core Autocorrect Integration - Real keystrokes with full API access"  

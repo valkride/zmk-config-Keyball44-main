@@ -1,1 +1,0 @@
-"Advanced autocorrect detection engine - works within external module constraints"  
