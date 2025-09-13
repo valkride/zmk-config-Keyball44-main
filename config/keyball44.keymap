@@ -31,7 +31,7 @@
 
 / {
     spell_checker_toggle: spell_checker_toggle {
-        compatible = "zmk,behavior-spell-checker-toggle";
+        compatible = "zmk,behavior-spell-toggle";
         label = "SPELL_TOGGLE";
         #binding-cells = <0>;
     };
