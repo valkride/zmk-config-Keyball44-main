@@ -30,10 +30,13 @@
 };
 
 / {
-    spell_checker_toggle: spell_checker_toggle {
-        compatible = "zmk,behavior-spell-toggle";
-        label = "SPELL_TOGGLE";
-        #binding-cells = <0>;
+    macros {
+        spell_toggle: spell_toggle {
+            compatible = "zmk,behavior-macro";
+            label = "SPELL_TOGGLE";
+            #binding-cells = <0>;
+            bindings = <&macro_tap>, <&kp F24>;
+        };
     };
 
     behaviors {
@@ -251,7 +254,7 @@
             label = "SYM";
             bindings = <
                &none  &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &none
-               &kp LEFT_SHIFT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &spell_checker_toggle    &none  &none  &none  &none  &none  &none
+               &kp LEFT_SHIFT  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &spell_toggle    &none  &none  &none  &none  &none  &none
                &td_ctrl_sym    &none  &none  &none  &none  &none        &none  &none  &none  &none  &none  &td_gui_prnscrn
                &kp TAB         &kp LALT  &bt BT_PRV  &bt BT_CLR  &bt BT_NXT    &none  &none    &none
 
