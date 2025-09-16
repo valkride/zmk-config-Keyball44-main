@@ -1,63 +1,11 @@
 /*
  * Memory optimization overlay for Nice Nano v2 with large dictionary support
- * Enables access to full 32MB flash memory for comprehensive spell checker dictionary
+ * Configures heap and stack for large dictionary processing
  */
 
-&flash0 {
-    partitions {
-        compatible = "fixed-partitions";
-        #address-cells = <1>;
-        #size-cells = <1>;
-
-        /* Increase code partition size to accommodate large dictionary */
-        code_partition: partition@0 {
-            label = "code_partition";
-            reg = <0x00000000 0x01000000>; /* 16MB for code and dictionary */
-        };
-
-        /* Storage partition for user data */
-        storage_partition: partition@1000000 {
-            label = "storage_partition"; 
-            reg = <0x01000000 0x01000000>; /* 16MB for storage */
-        };
-    };
-};
-
-/* Increase RAM allocation for dictionary processing */
 / {
+    /* Configure larger heap for dictionary operations */
     chosen {
-        zephyr,code-partition = &code_partition;
-    };
-    
-    /* Configure heap for dictionary operations */
-    memory {
-        dictionary-heap {
-            compatible = "memory-region";
-            size = <0x8000>; /* 32KB heap for dictionary operations */
-        };
-    };
-};
-
-/* Flash controller configuration for 32MB support */
-&qspi {
-    status = "okay";
-    
-    mx25r6435f: mx25r6435f@0 {
-            compatible = "jedec,spi-nor";
-            reg = <0>;
-            spi-max-frequency = <80000000>;
-            size = <0x2000000>; /* 32MB total flash size */
-            
-            partitions {
-                compatible = "fixed-partitions";
-                #address-cells = <1>;
-                #size-cells = <1>;
-                
-                /* Full 32MB available */
-                full_flash: partition@0 {
-                    label = "full_flash";
-                    reg = <0x00000000 0x2000000>;
-                };
-            };
+        zephyr,sram = &sram0;
     };
 };
